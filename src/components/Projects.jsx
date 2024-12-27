@@ -26,7 +26,7 @@ function Projects() {
             initial={{opacity:0}}
             whileHover={{opacity:1}}
             transition={{duration:0.5}}
-            className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 backdrop-blur-lg transition-opacity duration-500 group-hover:opacity-100">
+            className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 backdrop-blur-lg transition-opacity duration-500 group-hover:opacity-100 sm:opacity-100">
               <h3 className="mb-2 text-xl">{project.name}</h3>
               <p className="mb-12 p-4">{project.description}</p>
               <a

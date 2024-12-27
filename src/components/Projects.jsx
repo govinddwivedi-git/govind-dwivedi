@@ -26,16 +26,16 @@ function Projects() {
             initial={{opacity:0}}
             whileHover={{opacity:1}}
             transition={{duration:0.5}}
-            className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 backdrop-blur-lg transition-opacity duration-500 group-hover:opacity-100 sm:opacity-100">
+            className="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 backdrop-blur-lg transition-opacity duration-500 group-hover:opacity-100">
               <h3 className="mb-2 text-xl">{project.name}</h3>
-              <p className="mb-12 p-4">{project.description}</p>
+              <p className="mb-8 px-4 text-sm sm:text-base">{project.description}</p>
               <a
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white px-4 py-2 text-black hover:bg-gray-300"
+                className="rounded-full bg-white px-6 py-3 text-black hover:bg-gray-300 text-sm sm:text-base font-medium"
               >
-                <div className="flex items-center">
+                <div className="flex items-center gap-2">
                   <span>View on Github</span>
                   <MdArrowOutward />
                 </div>
@@ -45,9 +45,9 @@ function Projects() {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-white px-4 py-2 text-black hover:bg-gray-300 mt-5"
+                  className="rounded-full bg-white px-6 py-3 text-black hover:bg-gray-300 mt-4 text-sm sm:text-base font-medium"
                 >
-                  <div className="flex items-center">
+                  <div className="flex items-center gap-2">
                     <span>Live</span>
                     <MdArrowOutward />
                   </div>

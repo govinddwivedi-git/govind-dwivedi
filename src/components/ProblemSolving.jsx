@@ -161,7 +161,7 @@ export default function ProblemSolving() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1 }}
               whileHover={{ scale: 1.02 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
@@ -245,7 +245,7 @@ export default function ProblemSolving() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1 }}
               whileHover={{ scale: 1.02 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
@@ -266,7 +266,7 @@ export default function ProblemSolving() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 1}}
               whileHover={{ scale: 1.02 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
@@ -345,7 +345,7 @@ export default function ProblemSolving() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 1 }}
               whileHover={{ scale: 1.02 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
@@ -366,7 +366,7 @@ export default function ProblemSolving() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 1 }}
               whileHover={{ scale: 1.02 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
@@ -453,7 +453,7 @@ export default function ProblemSolving() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 1 }}
               whileHover={{ scale: 1.02 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
@@ -473,7 +473,7 @@ export default function ProblemSolving() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 1 }}
             whileHover={{ scale: 1.02 }}
             className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
           >

@@ -27,7 +27,8 @@ export default function WorkExperience() {
             transition={{ duration: 1, delay: index * 0.2 }}
             className="rounded-xl border border-stone-50/30 bg-white/10 p-4"
             key={index}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.2} }}
+        
           >
             <h3 className="text-2xl font-semibold">{experience.title}</h3>
             <p className="text-xl">{experience.company}</p>

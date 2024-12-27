@@ -37,8 +37,8 @@ const Contact = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="w-full px-4 mt-7"
       >
-        <div className="border-b border-gray-600 w-full max-w-[1200px] mx-auto"></div>
-        <div className="flex flex-col md:flex-row items-center justify-between max-w-[1200px] mx-auto py-6 ">
+        <div className="border-b border-gray-600 w-full"></div>
+        <div className="flex flex-col md:flex-row items-center justify-between py-6 ">
           <motion.a
             href="#"
             whileHover={{ scale: 1.05 }}

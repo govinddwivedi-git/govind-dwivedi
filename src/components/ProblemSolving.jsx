@@ -159,10 +159,10 @@ export default function ProblemSolving() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2">
           {codechefData ? (
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              
+              transition={{ duration: 1, delay: 0.2 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
@@ -243,10 +243,10 @@ export default function ProblemSolving() {
             </motion.div>
           ) : (
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              
+              transition={{ duration: 1, delay: 0.2 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
@@ -264,10 +264,10 @@ export default function ProblemSolving() {
 
           {codeforcesData ? (
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1}}
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              
+              transition={{ duration: 1, delay: 0.4 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
@@ -343,10 +343,10 @@ export default function ProblemSolving() {
             </motion.div>
           ) : (
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              
+              transition={{ duration: 1, delay: 0.4 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
@@ -364,10 +364,10 @@ export default function ProblemSolving() {
 
           {leetcodeData ? (
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              
+              transition={{ duration: 1, delay: 0.6 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
@@ -451,10 +451,10 @@ export default function ProblemSolving() {
             </motion.div>
           ) : (
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              
+              transition={{ duration: 1, delay: 0.6 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
@@ -471,10 +471,10 @@ export default function ProblemSolving() {
           )}
 
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            whileHover={{ scale: 1.02 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            
+            transition={{ duration: 1, delay: 0.8 }}
             className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
           >
             <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">

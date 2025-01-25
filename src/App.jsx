@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <Hero />
         <Projects/>
-        <ProblemSolving />
+        {/* <ProblemSolving /> */}
         <Skills />
         <WorkExperience />
         <EducationSection />

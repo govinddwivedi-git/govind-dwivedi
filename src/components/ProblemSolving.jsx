@@ -513,25 +513,25 @@ export default function ProblemSolving() {
                   <p>
                     <span className="font-medium">Easy:</span>{" "}
                     <span className="text-green-600">
-                      127
+                      147
                     </span>
                   </p>
                   <p>
                     <span className="font-medium">Medium:</span>{" "}
                     <span className="text-yellow-600">
-                      136
+                      164
                     </span>
                   </p>
                   <p>
                     <span className="font-medium">Hard:</span>{" "}
                     <span className="text-red-600">
-                      27
+                      32
                     </span>
                   </p>
                   <p>
                     <span className="font-medium">Total:</span>{" "}
                     <span className="text-blue-600">
-                      318
+                      372
                     </span>
                   </p>
                 </div>
@@ -543,16 +543,16 @@ export default function ProblemSolving() {
                   <p>
                     <span className="font-medium">Contest Rating:</span>{" "}
                     <span className="text-purple-600">
-                      1692
+                      1783
                     </span>
                   </p>
                   <p>
                     <span className="font-medium">Global Rank:</span>{" "}
-                    <span>7788</span>
+                    <span>3063</span>
                   </p>
                   <p>
                     <span className="font-medium">Contests Attended:</span>{" "}
-                    <span>2</span>
+                    <span>4</span>
                   </p>
                 </div>
               </div>

@@ -16,9 +16,9 @@ function App() {
         <Navbar />
         <Hero />
         <Projects/>
-        {/* <ProblemSolving /> */}
+        <ProblemSolving />
         <Skills />
-        <WorkExperience />
+        {/* <WorkExperience /> */}
         <EducationSection />
         <Contact />
       </div>

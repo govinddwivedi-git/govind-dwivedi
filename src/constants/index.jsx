@@ -74,7 +74,7 @@ export const PROJECTS = [
       "A modern, responsive portfolio website built with React, Framer Motion, and Tailwind CSS to showcase my skills, projects, education, and work experience.",
     image: projectImage3,
     githubLink: "https://github.com/govinddwivedi-git/govind-dwivedi",
-    liveLink: "#",
+    liveLink: "https://govind-dwivedi.vercel.app/",
     isLive : true,
   },
   {

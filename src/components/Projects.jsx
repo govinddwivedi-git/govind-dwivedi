@@ -42,7 +42,7 @@ function Projects() {
               </a>
               {project.isLive && (
                 <a
-                  href={project.githubLink}
+                  href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full bg-white px-4 md:px-6 py-2 md:py-3 text-black hover:bg-gray-300 mt-2 md:mt-4 text-xs md:text-base font-medium"

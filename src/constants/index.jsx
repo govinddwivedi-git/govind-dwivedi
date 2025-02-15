@@ -249,7 +249,7 @@ export const SOCIAL_MEDIA_LINKS = [
     icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://discordapp.com/users/govinddwivedi#0000",
+    href: "https://discordapp.com/users/govinddwivedi",
     icon: <FaDiscord fontSize={25} className="hover:opacity-80" />,
   },
   {

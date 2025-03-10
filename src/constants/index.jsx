@@ -255,11 +255,11 @@ export const SOCIAL_MEDIA_LINKS = [
     icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://discordapp.com/users/govinddwivedi",
+    href: "https://discord.com/users/govinddwivedi",
     icon: <FaDiscord fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://twitter.com/govinddwivedi09",
+    href: "https://x.com/govinddwivedi09",
     icon: <FaXTwitter fontSize={25} className="hover:opacity-80" />,
   },
   {
@@ -267,3 +267,5 @@ export const SOCIAL_MEDIA_LINKS = [
     icon: <FaGithub fontSize={25} className="hover:opacity-80" />,
   },
 ];
+
+

@@ -6,7 +6,7 @@ function Projects() {
     <section className="pt-20 w-[90%] m-auto" id="projects">
       <motion.h2 className="mb-8 text-center text-3xl lg:text-4xl font-bold" initial={{opacity:0,y:-20}}
       whileInView={{opacity:1,y:0}} transition={{duration:0.8}}>Projects</motion.h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
         {PROJECTS.map((project) => (
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}

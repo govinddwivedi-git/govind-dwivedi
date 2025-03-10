@@ -16,6 +16,12 @@ import projectImage3 from "../assets/project3.jpeg";
 import projectImage4 from "../assets/project4.jpeg";
 import projectImage5 from "../assets/project5.jpeg";
 import projectImage6 from "../assets/project6.jpeg";
+import apexlearning from "../assets/apexlearning.png"
+import chatbot from "../assets/chatbot.png"
+import CodeHorses from "../assets/codehorses.png"
+import CPT from "../assets/cp.png"
+import portfolio from "../assets/portfolio.png"
+
 
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs, TbBrandPython, TbBrandPhp, TbBrandVue } from "react-icons/tb";
@@ -52,7 +58,7 @@ export const PROJECTS = [
     name: "Apex Learning: AI-Powered Learning Platform",
     description:
       "Apex Learning is an innovative AI-powered learning platform that helps students and professionals create personalized study materials, practice tests, and educational content.",
-    image: projectImage1,
+    image: apexlearning,
     githubLink: "https://github.com/govinddwivedi-git/apex-learning",
     liveLink: "https://apex-learning-two.vercel.app/",
     isLive: true,
@@ -62,7 +68,7 @@ export const PROJECTS = [
     name: "CP Community Tracker",
     description:
       "A comprehensive platform for tracking and analyzing competitive programming performance across multiple coding platforms. This system helps students monitor their progress and rankings across different competitive programming websites while providing detailed analysis of their coding journey.",
-    image: projectImage2,
+    image: CPT,
     githubLink: "https://github.com/govinddwivedi-git/competitive-programming-tracker",
     liveLink: "#",
     isLive : false,
@@ -72,7 +78,7 @@ export const PROJECTS = [
     name: "Personal Portfolio Website",
     description:
       "A modern, responsive portfolio website built with React, Framer Motion, and Tailwind CSS to showcase my skills, projects, education, and work experience.",
-    image: projectImage3,
+    image: portfolio,
     githubLink: "https://github.com/govinddwivedi-git/govind-dwivedi",
     liveLink: "https://govind-dwivedi.vercel.app/",
     isLive : true,
@@ -82,7 +88,7 @@ export const PROJECTS = [
     name: "Student Query Resolution Chatbot",
     description:
       "An interactive chatbot system designed to help resolve student queries efficiently. The system features both user and admin interfaces, allowing for dynamic query handling and response management.",
-    image: projectImage4,
+    image: chatbot,
     githubLink: "https://github.com/govinddwivedi-git/chatbot-for-students-queries",
     liveLink: "#",
     isLive : false,
@@ -92,7 +98,7 @@ export const PROJECTS = [
     name: "Web-Based Code Editor and Compiler",
     description:
       "This project is a web-based code editor and compiler, built using CodeMirror for code editing and CompileX for code compilation.",
-    image: projectImage5,
+    image: CodeHorses,
     githubLink: "https://github.com/govinddwivedi-git/CodeHorses",
     liveLink: "#",
     isLive : false,
@@ -230,16 +236,16 @@ export const EDUCATION = [
   {
     degree: "Schooling",
     institution: "D.A.V. Public School, Dudhichua, Singrauli, Madhya Pradesh",
-    duration: "2010-2023",
+    duration: "2010 - 2023",
     description:
-      "Completed my schooling with 94.6%. Participated in various extracurricular activities. Remained topper of the class from UKG to 12th.",
+      "Completed my schooling with 94.6%, consistently excelling academically as the class topper from UKG to 12th grade. Actively participated in various extracurricular activities, fostering a well-rounded skill set.",
   },
   {
-    degree: "Bachelor of Technology in Computer Science And Engineering",
+    degree: "Bachelor of Technology in Computer Science and Engineering",
     institution: "Indian Institute of Information Technology, Jabalpur, Madhya Pradesh",
     duration: "2023 - 2027",
     description:
-      "I'm a B.Tech Computer Science student at IIIT Jabalpur. I'm still learning, but I'm developing a good foundation in problem-solving and web development. I'm grateful for the opportunities I've had so far, and I'm currently maintaining a 9.7 CPI. I'm eager to continue learning and contributing to interesting projects."
+      "Pursuing a B.Tech in Computer Science at IIIT Jabalpur, with a strong foundation in problem-solving and web development. Currently maintaining a 9.7 CPI while actively exploring new technologies and contributing to impactful projects. Eager to collaborate, learn, and take on new challenges.",
   },
 ];
 

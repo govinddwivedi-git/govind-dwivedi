@@ -23,7 +23,7 @@ function Projects() {
               className="h-[200px] md:h-full w-full object-cover transition-transform duration-500 md:group-hover:scale-110"
             />
             {/* Mobile view content */}
-            <div className="md:hidden flex flex-col items-center justify-center p-4 bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30 text-white">
+            <div className="md:hidden flex flex-col items-center justify-center p-4 bg-black/20 text-white">
               <h3 className="mb-2 text-lg font-semibold text-center">{project.name}</h3>
               <p className="mb-4 text-sm text-center">{project.description}</p>
               <div className="flex flex-col gap-2 w-full items-center">

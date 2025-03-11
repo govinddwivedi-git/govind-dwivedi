@@ -14,7 +14,7 @@ function Projects() {
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
             key={project.id}
-            className="group relative overflow-hidden rounded-3xl flex flex-col md:block border border-slate-600"
+            className="group relative overflow-hidden rounded-3xl flex flex-col md:block border border-stone-50/30"
           >
             <motion.img
               whileHover={{ scale: 1.1 }}

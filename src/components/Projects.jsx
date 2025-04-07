@@ -81,7 +81,7 @@ function Projects() {
                   className="rounded-full bg-white px-6 py-3 text-black hover:bg-gray-300 mt-4 text-base font-medium"
                 >
                   <div className="flex items-center gap-2">
-                    <span>Live</span>
+                  {project.comingSoon ? <span>Coming Soon</span> : <span>Live</span>}
                     <MdArrowOutward />
                   </div>
                 </a>

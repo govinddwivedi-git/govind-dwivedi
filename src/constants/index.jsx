@@ -61,8 +61,9 @@ export const PROJECTS = [
       "Voluntree is a comprehensive volunteer management platform that connects passionate volunteers with meaningful causes to create positive change in communities. It is our HackByte 3.0 hackathon project built within strict deadline of 36 hours.",
     image: voluntree,
     githubLink: "https://github.com/govinddwivedi-git/apex-learning",
-    liveLink: "https://apex-learning-two.vercel.app/",
+    liveLink: "#",
     isLive: true,
+    comingSoon : true
   },
   {
     id: 2,
@@ -71,7 +72,7 @@ export const PROJECTS = [
       "Apex Learning is an innovative AI-powered learning platform that helps students and professionals create personalized study materials, practice tests, and educational content.",
     image: apexlearning,
     githubLink: "https://github.com/govinddwivedi-git/apex-learning",
-    liveLink: "Coming soon",
+    liveLink: "https://apex-learning-two.vercel.app/",
     isLive: true,
   },
   {

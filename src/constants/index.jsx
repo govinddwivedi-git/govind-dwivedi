@@ -56,7 +56,7 @@ export const USER = "govinddwivedi";
 export const PROJECTS = [
   {
     id: 1,
-    name: "Apex Learning: AI-Powered Learning Platform",
+    name: "Voluntree: Make A Difference",
     description:
       "Voluntree is a comprehensive volunteer management platform that connects passionate volunteers with meaningful causes to create positive change in communities. It is our HackByte 3.0 hackathon project built within strict deadline of 36 hours.",
     image: voluntree,
@@ -67,7 +67,7 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    name: "Voluntree: Make A Difference",
+    name: "Apex Learning: AI-Powered Learning Platform",
     description:
       "Apex Learning is an innovative AI-powered learning platform that helps students and professionals create personalized study materials, practice tests, and educational content.",
     image: apexlearning,

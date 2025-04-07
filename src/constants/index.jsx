@@ -21,6 +21,7 @@ import chatbot from "../assets/chatbot.png"
 import CodeHorses from "../assets/codehorses.png"
 import CPT from "../assets/cp.png"
 import portfolio from "../assets/portfolio.png"
+import voluntree from "../assets/volunteer.png"
 
 
 import { RiReactjsLine } from "react-icons/ri";
@@ -57,14 +58,34 @@ export const PROJECTS = [
     id: 1,
     name: "Apex Learning: AI-Powered Learning Platform",
     description:
-      "Apex Learning is an innovative AI-powered learning platform that helps students and professionals create personalized study materials, practice tests, and educational content.",
-    image: apexlearning,
+      "Voluntree is a comprehensive volunteer management platform that connects passionate volunteers with meaningful causes to create positive change in communities. It is our HackByte 3.0 hackathon project built within strict deadline of 36 hours.",
+    image: voluntree,
     githubLink: "https://github.com/govinddwivedi-git/apex-learning",
     liveLink: "https://apex-learning-two.vercel.app/",
     isLive: true,
   },
   {
     id: 2,
+    name: "Voluntree: Make A Difference",
+    description:
+      "Apex Learning is an innovative AI-powered learning platform that helps students and professionals create personalized study materials, practice tests, and educational content.",
+    image: apexlearning,
+    githubLink: "https://github.com/govinddwivedi-git/apex-learning",
+    liveLink: "Coming soon",
+    isLive: true,
+  },
+  {
+    id: 4,
+    name: "Personal Portfolio Website",
+    description:
+    "A modern, responsive portfolio website built with React, Framer Motion, and Tailwind CSS to showcase my skills, projects, education, and work experience.",
+    image: portfolio,
+    githubLink: "https://github.com/govinddwivedi-git/govind-dwivedi",
+    liveLink: "https://govind-dwivedi.vercel.app/",
+    isLive : true,
+  },
+  {
+    id: 3,
     name: "CP Community Tracker",
     description:
       "A comprehensive platform for tracking and analyzing competitive programming performance across multiple coding platforms. This system helps students monitor their progress and rankings across different competitive programming websites while providing detailed analysis of their coding journey.",
@@ -74,17 +95,7 @@ export const PROJECTS = [
     isLive : false,
   },
   {
-    id: 3,
-    name: "Personal Portfolio Website",
-    description:
-      "A modern, responsive portfolio website built with React, Framer Motion, and Tailwind CSS to showcase my skills, projects, education, and work experience.",
-    image: portfolio,
-    githubLink: "https://github.com/govinddwivedi-git/govind-dwivedi",
-    liveLink: "https://govind-dwivedi.vercel.app/",
-    isLive : true,
-  },
-  {
-    id: 4,
+    id: 5,
     name: "Student Query Resolution Chatbot",
     description:
       "An interactive chatbot system designed to help resolve student queries efficiently. The system features both user and admin interfaces, allowing for dynamic query handling and response management.",
@@ -94,7 +105,7 @@ export const PROJECTS = [
     isLive : false,
   },
   {
-    id: 5,
+    id: 6,
     name: "Web-Based Code Editor and Compiler",
     description:
       "This project is a web-based code editor and compiler, built using CodeMirror for code editing and CompileX for code compilation.",

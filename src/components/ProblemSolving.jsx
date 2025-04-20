@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { USER } from "../constants/index";
 import gfglogo from "../assets/gfglogo.jpeg";
 import lclogo from "../assets/lclogo.png";
+import knightlogo from "../assets/knight.png";
 import {
   SiCodechef,
   SiCodeforces,
@@ -448,6 +449,14 @@ export default function ProblemSolving() {
                     View Profile
                   </a>
                 </div>
+                <div className="ml-auto">
+                  <img 
+                    src={knightlogo} 
+                    alt="Knight Badge" 
+                    className="w-8 h-8"
+                    title="Knight"
+                  />
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-6 text-lg">
@@ -482,6 +491,12 @@ export default function ProblemSolving() {
                       <span className="text-blue-600">
                         {leetcodeData.solvedQuestions.total}/
                         {leetcodeData.totalQuestions.total}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Level:</span>{" "}
+                      <span className="text-green-600">
+                        Knight
                       </span>
                     </p>
                   </div>
@@ -559,7 +574,7 @@ export default function ProblemSolving() {
               transition={{ duration: 1, delay: 0.8 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
-              <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">
+              <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
                 GeeksForGeeks Statistics
                 <SiGeeksforgeeks className="text-4xl text-green-800 lg:text-5xl" />
               </h3>
@@ -591,15 +606,15 @@ export default function ProblemSolving() {
                   </h4>
                   <div className="space-y-2">
                     <p>
-                      <span className="font-medium">Basic:</span>{" "}
-                      <span className="text-blue-400">
-                        {gfgData.solvedStats.basic.count}
-                      </span>
-                    </p>
-                    <p>
                       <span className="font-medium">School:</span>{" "}
                       <span className="text-blue-300">
                         {gfgData.solvedStats.school.count}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Basic:</span>{" "}
+                      <span className="text-blue-400">
+                        {gfgData.solvedStats.basic.count}
                       </span>
                     </p>
                     <p>
@@ -630,9 +645,8 @@ export default function ProblemSolving() {
                 </div>
 
                 <div className="p-4 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Profile Info</h4>
+                  <h4 className="text-lg font-semibold mb-2">Additional Info</h4>
                   <div className="space-y-2">
-                    <h4 className="text-lg font-semibold mb-2">Contest Info</h4>
                     <div className="space-y-2">
                       <p>
                         <span className="font-medium">Contest Rating:</span>{" "}

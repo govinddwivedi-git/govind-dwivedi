@@ -9,6 +9,7 @@ export default function ProblemSolving() {
   const [codechefData, setCodechefData] = useState(null);
   const [codeforcesData, setCodeforcesData] = useState(null);
   const [leetcodeData, setLeetcodeData] = useState(null);
+  const [gfgData, setGfgData] = useState(null);
   const [loading, setLoading] = useState(true);
   const user = USER;
 
@@ -83,6 +84,18 @@ export default function ProblemSolving() {
               reputation: data.reputation
             });
           }
+        }
+        
+        // Fetch GeeksForGeeks data
+        try {
+          const gfgResponse = await fetch(`https://geeks-for-geeks-api.vercel.app/govinddwivedi`);
+          const gfgData = await gfgResponse.json();
+          
+          if (gfgData) {
+            setGfgData(gfgData);
+          }
+        } catch (error) {
+          console.error("GFG API Error:", error);
         }
       } catch (error) {
         console.error("Error:", error);
@@ -470,94 +483,127 @@ export default function ProblemSolving() {
             </motion.div>
           )}
 
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            
-            transition={{ duration: 1, delay: 0.8 }}
-            className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
-          >
-            <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">
-              GeeksForGeeks Statistics
-              <SiGeeksforgeeks className="text-4xl text-green-800 lg:text-5xl"/>
-            </h3>
-            <p className="text-yellow-500 text-sm mb-4 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-              </svg>
-              Statistics may not be up to date. Please visit profile for accurate results.
-            </p>
-            <div className="flex items-center gap-4 mb-4">
-            <img
-                    src={gfglogo}
-                    alt="LeetCode Profile"
-                    className="w-16 h-16 rounded-full"
-                  />
-              <div>
-                <h3 className="text-xl font-semibold">govinddwivedi</h3>
-                <a
-                  href={`https://www.geeksforgeeks.org/user/govinddwivedi/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  View Profile
-                </a>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 text-lg">
-              <div className=" p-4 rounded-lg">
-                <h4 className="text-lg font-semibold mb-2">Problem Solving</h4>
-                <div className="space-y-2">
-                  <p>
-                    <span className="font-medium">Easy:</span>{" "}
-                    <span className="text-green-600">
-                      148
-                    </span>
-                  </p>
-                  <p>
-                    <span className="font-medium">Medium:</span>{" "}
-                    <span className="text-yellow-600">
-                      180
-                    </span>
-                  </p>
-                  <p>
-                    <span className="font-medium">Hard:</span>{" "}
-                    <span className="text-red-600">
-                      35
-                    </span>
-                  </p>
-                  <p>
-                    <span className="font-medium">Total:</span>{" "}
-                    <span className="text-blue-600">
-                      392
-                    </span>
-                  </p>
+          {gfgData ? (
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
+            >
+              <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">
+                GeeksForGeeks Statistics
+                <SiGeeksforgeeks className="text-4xl text-green-800 lg:text-5xl"/>
+              </h3>
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src={gfgData.info.profilePicture || gfglogo}
+                  alt="GeeksForGeeks Profile"
+                  className="w-16 h-16 rounded-full"
+                />
+                <div>
+                  <h3 className="text-xl font-semibold">{gfgData.info.userName}</h3>
+                  <a
+                    href={`https://www.geeksforgeeks.org/user/${gfgData.info.userName}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    View Profile
+                  </a>
                 </div>
               </div>
 
-              <div className=" p-4 rounded-lg">
-                <h4 className="text-lg font-semibold mb-2">Contest Info</h4>
-                <div className="space-y-2">
-                  <p>
-                    <span className="font-medium">Contest Rating:</span>{" "}
-                    <span className="text-purple-600">
-                      1849
-                    </span>
-                  </p>
-                  <p>
-                    <span className="font-medium">Global Rank:</span>{" "}
-                    <span>1695</span>
-                  </p>
-                  <p>
-                    <span className="font-medium">Contests Attended:</span>{" "}
-                    <span>5</span>
-                  </p>
+              <div className="grid grid-cols-2 gap-6 text-lg">
+                <div className="p-4 rounded-lg">
+                  <h4 className="text-lg font-semibold mb-2">Problem Solving</h4>
+                  <div className="space-y-2">
+                    <p>
+                      <span className="font-medium">Easy:</span>{" "}
+                      <span className="text-green-600">
+                        {gfgData.solvedStats.easy.count}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Medium:</span>{" "}
+                      <span className="text-yellow-600">
+                        {gfgData.solvedStats.medium.count}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Hard:</span>{" "}
+                      <span className="text-red-600">
+                        {gfgData.solvedStats.hard.count}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Basic:</span>{" "}
+                      <span className="text-blue-400">
+                        {gfgData.solvedStats.basic.count}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">School:</span>{" "}
+                      <span className="text-blue-300">
+                        {gfgData.solvedStats.school.count}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Total:</span>{" "}
+                      <span className="text-blue-600">
+                        {gfgData.info.totalProblemsSolved}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-lg">
+                  <h4 className="text-lg font-semibold mb-2">Profile Info</h4>
+                  <div className="space-y-2">
+                    <p>
+                      <span className="font-medium">Institute:</span>{" "}
+                      <span className="text-purple-500 text-sm">
+                        {gfgData.info.institute}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Institute Rank:</span>{" "}
+                      <span>{gfgData.info.instituteRank}</span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Current Streak:</span>{" "}
+                      <span className="text-green-500">{gfgData.info.currentStreak} days</span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Max Streak:</span>{" "}
+                      <span className="text-green-600">{gfgData.info.maxStreak} days</span>
+                    </p>
+                    <p>
+                      <span className="font-medium">Coding Score:</span>{" "}
+                      <span className="text-orange-500">{gfgData.info.codingScore}</span>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ) : (
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
+            >
+              <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">
+                GeeksForGeeks Statistics
+                <SiGeeksforgeeks className="text-4xl text-green-800 lg:text-5xl"/>
+              </h3>
+              <p className="text-yellow-500 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+                Unable to load data. Please visit <a href={`https://www.geeksforgeeks.org/user/govinddwivedi/`} className="underline" target="_blank" rel="noopener noreferrer">profile</a> for statistics.
+              </p>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>

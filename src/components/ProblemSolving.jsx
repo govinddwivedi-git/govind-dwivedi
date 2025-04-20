@@ -585,8 +585,9 @@ export default function ProblemSolving() {
                   className="w-16 h-16 rounded-full"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold">
+                  <h3 className="text-xl font-semibold flex items-center gap-2">
                     {gfgData.info.userName}
+                    <span className="text-red-500">★★★★</span>
                   </h3>
                   <a
                     href={`https://www.geeksforgeeks.org/user/${gfgData.info.userName}/`}

@@ -86,9 +86,10 @@ export default function ProblemSolving() {
           }
         }
         
-        // Fetch GeeksForGeeks data
+        // Fetch GeeksForGeeks data using our proxy API
         try {
-          const gfgResponse = await fetch(`https://geeks-for-geeks-api.vercel.app/govinddwivedi`);
+          // Update this line to use our new proxy API
+          const gfgResponse = await fetch(`/api/gfg`);
           const gfgData = await gfgResponse.json();
           
           if (gfgData) {

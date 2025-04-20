@@ -659,7 +659,7 @@ export default function ProblemSolving() {
                       </p>
                       <p>
                         <span className="font-medium">Contests Attended:</span>{" "}
-                        <span>4</span>
+                        <span>5</span>
                       </p>
                     </div>
                     <p>

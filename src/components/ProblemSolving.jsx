@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import { USER } from "../constants/index";
 import gfglogo from "../assets/gfglogo.jpeg";
 import lclogo from "../assets/lclogo.png";
-import { SiCodechef, SiCodeforces, SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
+import {
+  SiCodechef,
+  SiCodeforces,
+  SiGeeksforgeeks,
+  SiLeetcode,
+} from "react-icons/si";
 import { motion } from "framer-motion";
 
 export default function ProblemSolving() {
@@ -60,9 +65,11 @@ export default function ProblemSolving() {
 
         // Add LeetCode data fetching
         if (user) {
-          const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${user}`);
+          const response = await fetch(
+            `https://leetcode-stats-api.herokuapp.com/${user}`
+          );
           const data = await response.json();
-          
+
           if (data.status === "success") {
             setLeetcodeData({
               name: user,
@@ -71,27 +78,27 @@ export default function ProblemSolving() {
                 easy: data.easySolved,
                 medium: data.mediumSolved,
                 hard: data.hardSolved,
-                total: data.totalSolved
+                total: data.totalSolved,
               },
               totalQuestions: {
                 easy: data.totalEasy,
                 medium: data.totalMedium,
                 hard: data.totalHard,
-                total: data.totalQuestions
+                total: data.totalQuestions,
               },
               acceptanceRate: data.acceptanceRate,
               contributionPoints: data.contributionPoints,
-              reputation: data.reputation
+              reputation: data.reputation,
             });
           }
         }
-        
+
         // Fetch GeeksForGeeks data using our proxy API
         try {
           // Update this line to use our new proxy API
           const gfgResponse = await fetch(`/api/gfg`);
           const gfgData = await gfgResponse.json();
-          
+
           if (gfgData) {
             setGfgData(gfgData);
           }
@@ -138,13 +145,13 @@ export default function ProblemSolving() {
 
   const getStarColor = (rating) => {
     const numRating = parseInt(rating);
-    if (numRating < 1400) return "#666666";        // 1★
-    if (numRating < 1600) return "#1E7D22";        // 2★
-    if (numRating < 1800) return "#3366CC";        // 3★
-    if (numRating < 2000) return "#684273";        // 4★
-    if (numRating < 2200) return "#FFD819";        // 5★
-    if (numRating < 2500) return "#FF7F00";        // 6★
-    return "#D0011B";                              // 7★
+    if (numRating < 1400) return "#666666"; // 1★
+    if (numRating < 1600) return "#1E7D22"; // 2★
+    if (numRating < 1800) return "#3366CC"; // 3★
+    if (numRating < 2000) return "#684273"; // 4★
+    if (numRating < 2200) return "#FFD819"; // 5★
+    if (numRating < 2500) return "#FF7F00"; // 6★
+    return "#D0011B"; // 7★
   };
 
   const getStars = (rating) => {
@@ -158,10 +165,9 @@ export default function ProblemSolving() {
     return 7;
   };
 
-
   return (
     <section className="pt-20" id="cp-dsa">
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -172,10 +178,9 @@ export default function ProblemSolving() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2">
           {codechefData ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              
               transition={{ duration: 1, delay: 0.2 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
@@ -201,18 +206,20 @@ export default function ProblemSolving() {
                   </a>
                 </div>
                 <div className="ml-auto flex items-center gap-1">
-                  {[...Array(getStars(codechefData.currentRating))].map((_, i) => (
-                    <span
-                      key={i}
-                      className="text-2xl"
-                      style={{
-                        color: getStarColor(codechefData.currentRating),
-                        textShadow: "0px 0px 3px rgba(0,0,0,0.3)"
-                      }}
-                    >
-                      ★
-                    </span>
-                  ))}
+                  {[...Array(getStars(codechefData.currentRating))].map(
+                    (_, i) => (
+                      <span
+                        key={i}
+                        className="text-2xl"
+                        style={{
+                          color: getStarColor(codechefData.currentRating),
+                          textShadow: "0px 0px 3px rgba(0,0,0,0.3)",
+                        }}
+                      >
+                        ★
+                      </span>
+                    )
+                  )}
                 </div>
               </div>
 
@@ -256,10 +263,9 @@ export default function ProblemSolving() {
               </div>
             </motion.div>
           ) : (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              
               transition={{ duration: 1, delay: 0.2 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
@@ -268,25 +274,42 @@ export default function ProblemSolving() {
                 <SiCodechef className="text-4xl text-red-400 lg:text-5xl" />
               </h3>
               <p className="text-yellow-500 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
                 </svg>
-                Unable to load data. Please visit <a href={`https://www.codechef.com/users/${user}`} className="underline" target="_blank" rel="noopener noreferrer">profile</a> for statistics.
+                Unable to load data. Please visit{" "}
+                <a
+                  href={`https://www.codechef.com/users/${user}`}
+                  className="underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  profile
+                </a>{" "}
+                for statistics.
               </p>
             </motion.div>
           )}
 
           {codeforcesData ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              
               transition={{ duration: 1, delay: 0.4 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
                 Codeforces Statistics
-                <SiCodeforces className="text-4xl text-blue-400 lg:text-5xl"/>
+                <SiCodeforces className="text-4xl text-blue-400 lg:text-5xl" />
               </h3>
               <div className="flex items-center gap-4 mb-4">
                 <img
@@ -295,7 +318,9 @@ export default function ProblemSolving() {
                   className="w-16 h-16 rounded-full"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold">{codeforcesData.name}</h3>
+                  <h3 className="text-xl font-semibold">
+                    {codeforcesData.name}
+                  </h3>
                   <a
                     href={`https://codeforces.com/profile/${codeforcesData.name}`}
                     target="_blank"
@@ -339,7 +364,9 @@ export default function ProblemSolving() {
                 </div>
 
                 <div className=" p-4 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Additional Info</h4>
+                  <h4 className="text-lg font-semibold mb-2">
+                    Additional Info
+                  </h4>
                   <div className="space-y-2">
                     <p>
                       <span className="font-medium">Country: </span>
@@ -356,40 +383,56 @@ export default function ProblemSolving() {
               </div>
             </motion.div>
           ) : (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              
               transition={{ duration: 1, delay: 0.4 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
                 Codeforces Statistics
-                <SiCodeforces className="text-4xl text-blue-400 lg:text-5xl"/>
+                <SiCodeforces className="text-4xl text-blue-400 lg:text-5xl" />
               </h3>
               <p className="text-yellow-500 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
                 </svg>
-                Unable to load data. Please visit <a href={`https://codeforces.com/profile/${user}`} className="underline" target="_blank" rel="noopener noreferrer">profile</a> for statistics.
+                Unable to load data. Please visit{" "}
+                <a
+                  href={`https://codeforces.com/profile/${user}`}
+                  className="underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  profile
+                </a>{" "}
+                for statistics.
               </p>
             </motion.div>
           )}
 
           {leetcodeData ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              
               transition={{ duration: 1, delay: 0.6 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
                 LeetCode Statistics
-                <SiLeetcode className="text-4xl text-yellow-600 lg:text-5xl"/>
+                <SiLeetcode className="text-4xl text-yellow-600 lg:text-5xl" />
               </h3>
               <div className="flex items-center gap-4 mb-4">
-              <img
+                <img
                   src={lclogo}
                   alt="Codeforces Profile"
                   className="w-16 h-16 rounded-full"
@@ -409,37 +452,45 @@ export default function ProblemSolving() {
 
               <div className="grid grid-cols-2 gap-6 text-lg">
                 <div className="p-4 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Problem Solving</h4>
+                  <h4 className="text-lg font-semibold mb-2">
+                    Problem Solving
+                  </h4>
                   <div className="space-y-2">
                     <p>
                       <span className="font-medium">Easy:</span>{" "}
                       <span className="text-green-600">
-                        {leetcodeData.solvedQuestions.easy}/{leetcodeData.totalQuestions.easy}
+                        {leetcodeData.solvedQuestions.easy}/
+                        {leetcodeData.totalQuestions.easy}
                       </span>
                     </p>
                     <p>
                       <span className="font-medium">Medium:</span>{" "}
                       <span className="text-yellow-600">
-                        {leetcodeData.solvedQuestions.medium}/{leetcodeData.totalQuestions.medium}
+                        {leetcodeData.solvedQuestions.medium}/
+                        {leetcodeData.totalQuestions.medium}
                       </span>
                     </p>
                     <p>
                       <span className="font-medium">Hard:</span>{" "}
                       <span className="text-red-600">
-                        {leetcodeData.solvedQuestions.hard}/{leetcodeData.totalQuestions.hard}
+                        {leetcodeData.solvedQuestions.hard}/
+                        {leetcodeData.totalQuestions.hard}
                       </span>
                     </p>
                     <p>
                       <span className="font-medium">Total:</span>{" "}
                       <span className="text-blue-600">
-                        {leetcodeData.solvedQuestions.total}/{leetcodeData.totalQuestions.total}
+                        {leetcodeData.solvedQuestions.total}/
+                        {leetcodeData.totalQuestions.total}
                       </span>
                     </p>
                   </div>
                 </div>
 
                 <div className="p-4 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Additional Info</h4>
+                  <h4 className="text-lg font-semibold mb-2">
+                    Additional Info
+                  </h4>
                   <div className="space-y-2">
                     <p>
                       <span className="font-medium">Acceptance Rate:</span>{" "}
@@ -464,28 +515,45 @@ export default function ProblemSolving() {
               </div>
             </motion.div>
           ) : (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              
               transition={{ duration: 1, delay: 0.6 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
                 LeetCode Statistics
-                <SiLeetcode className="text-4xl text-yellow-600 lg:text-5xl"/>
+                <SiLeetcode className="text-4xl text-yellow-600 lg:text-5xl" />
               </h3>
               <p className="text-yellow-500 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
                 </svg>
-                Unable to load data. Please visit <a href={`https://leetcode.com/${user}`} className="underline" target="_blank" rel="noopener noreferrer">profile</a> for statistics.
+                Unable to load data. Please visit{" "}
+                <a
+                  href={`https://leetcode.com/${user}`}
+                  className="underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  profile
+                </a>{" "}
+                for statistics.
               </p>
             </motion.div>
           )}
 
           {gfgData ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
@@ -493,7 +561,7 @@ export default function ProblemSolving() {
             >
               <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">
                 GeeksForGeeks Statistics
-                <SiGeeksforgeeks className="text-4xl text-green-800 lg:text-5xl"/>
+                <SiGeeksforgeeks className="text-4xl text-green-800 lg:text-5xl" />
               </h3>
               <div className="flex items-center gap-4 mb-4">
                 <img
@@ -502,7 +570,9 @@ export default function ProblemSolving() {
                   className="w-16 h-16 rounded-full"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold">{gfgData.info.userName}</h3>
+                  <h3 className="text-xl font-semibold">
+                    {gfgData.info.userName}
+                  </h3>
                   <a
                     href={`https://www.geeksforgeeks.org/user/${gfgData.info.userName}/`}
                     target="_blank"
@@ -516,8 +586,22 @@ export default function ProblemSolving() {
 
               <div className="grid grid-cols-2 gap-6 text-lg">
                 <div className="p-4 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Problem Solving</h4>
+                  <h4 className="text-lg font-semibold mb-2">
+                    Problem Solving
+                  </h4>
                   <div className="space-y-2">
+                    <p>
+                      <span className="font-medium">Basic:</span>{" "}
+                      <span className="text-blue-400">
+                        {gfgData.solvedStats.basic.count}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">School:</span>{" "}
+                      <span className="text-blue-300">
+                        {gfgData.solvedStats.school.count}
+                      </span>
+                    </p>
                     <p>
                       <span className="font-medium">Easy:</span>{" "}
                       <span className="text-green-600">
@@ -537,18 +621,6 @@ export default function ProblemSolving() {
                       </span>
                     </p>
                     <p>
-                      <span className="font-medium">Basic:</span>{" "}
-                      <span className="text-blue-400">
-                        {gfgData.solvedStats.basic.count}
-                      </span>
-                    </p>
-                    <p>
-                      <span className="font-medium">School:</span>{" "}
-                      <span className="text-blue-300">
-                        {gfgData.solvedStats.school.count}
-                      </span>
-                    </p>
-                    <p>
                       <span className="font-medium">Total:</span>{" "}
                       <span className="text-blue-600">
                         {gfgData.info.totalProblemsSolved}
@@ -560,34 +632,37 @@ export default function ProblemSolving() {
                 <div className="p-4 rounded-lg">
                   <h4 className="text-lg font-semibold mb-2">Profile Info</h4>
                   <div className="space-y-2">
-                    <p>
-                      <span className="font-medium">Institute:</span>{" "}
-                      <span className="text-purple-500 text-sm">
-                        {gfgData.info.institute}
-                      </span>
-                    </p>
+                    <h4 className="text-lg font-semibold mb-2">Contest Info</h4>
+                    <div className="space-y-2">
+                      <p>
+                        <span className="font-medium">Contest Rating:</span>{" "}
+                        <span className="text-purple-600">1849</span>
+                      </p>
+                      <p>
+                        <span className="font-medium">Global Rank:</span>{" "}
+                        <span>1779</span>
+                      </p>
+                      <p>
+                        <span className="font-medium">Contests Attended:</span>{" "}
+                        <span>4</span>
+                      </p>
+                    </div>
                     <p>
                       <span className="font-medium">Institute Rank:</span>{" "}
                       <span>{gfgData.info.instituteRank}</span>
                     </p>
                     <p>
-                      <span className="font-medium">Current Streak:</span>{" "}
-                      <span className="text-green-500">{gfgData.info.currentStreak} days</span>
-                    </p>
-                    <p>
                       <span className="font-medium">Max Streak:</span>{" "}
-                      <span className="text-green-600">{gfgData.info.maxStreak} days</span>
-                    </p>
-                    <p>
-                      <span className="font-medium">Coding Score:</span>{" "}
-                      <span className="text-orange-500">{gfgData.info.codingScore}</span>
+                      <span className="text-green-500">
+                        {gfgData.info.currentStreak} days
+                      </span>
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
           ) : (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
@@ -595,13 +670,31 @@ export default function ProblemSolving() {
             >
               <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">
                 GeeksForGeeks Statistics
-                <SiGeeksforgeeks className="text-4xl text-green-800 lg:text-5xl"/>
+                <SiGeeksforgeeks className="text-4xl text-green-800 lg:text-5xl" />
               </h3>
               <p className="text-yellow-500 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
                 </svg>
-                Unable to load data. Please visit <a href={`https://www.geeksforgeeks.org/user/govinddwivedi/`} className="underline" target="_blank" rel="noopener noreferrer">profile</a> for statistics.
+                Unable to load data. Please visit{" "}
+                <a
+                  href={`https://www.geeksforgeeks.org/user/govinddwivedi/`}
+                  className="underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  profile
+                </a>{" "}
+                for statistics.
               </p>
             </motion.div>
           )}

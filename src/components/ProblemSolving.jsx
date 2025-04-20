@@ -435,7 +435,7 @@ export default function ProblemSolving() {
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src={lclogo}
-                  alt="Codeforces Profile"
+                  alt="Leetcode Profile"
                   className="w-16 h-16 rounded-full"
                 />
                 <div>
@@ -585,10 +585,7 @@ export default function ProblemSolving() {
                   className="w-16 h-16 rounded-full"
                 />
                 <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-xl font-semibold">{gfgData.info.userName}</h3>
-                    <span className="text-red-500 text-xl">★★★★</span>
-                  </div>
+                  <h3 className="text-xl font-semibold">{gfgData.info.userName}</h3>
                   <a
                     href={`https://www.geeksforgeeks.org/user/${gfgData.info.userName}/`}
                     target="_blank"
@@ -597,6 +594,9 @@ export default function ProblemSolving() {
                   >
                     View Profile
                   </a>
+                </div>
+                <div className="ml-auto">
+                  <div className="text-red-500 text-xl">★★★★</div>
                 </div>
               </div>
 

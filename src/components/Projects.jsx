@@ -16,12 +16,24 @@ function Projects() {
             key={project.id}
             className="group relative overflow-hidden rounded-3xl flex flex-col md:block"
           >
-            <motion.img
-              whileHover={{ scale: 1.1 }}
-              src={project.image}
-              alt={project.name}
-              className="h-[200px] md:h-full w-full object-cover transition-transform duration-500 md:group-hover:scale-110"
-            />
+            <div className="relative w-full aspect-video">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                src={project.image}
+                alt={project.name}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 md:group-hover:scale-110"
+              />
+              <div className="absolute bottom-0 left-0 right-0 backdrop-blur-sm bg-blue-900 py-2 px-3 flex flex-wrap gap-2 items-center justify-center">
+                {project.techStack && project.techStack.map((tech, index) => (
+                  <span 
+                    key={index} 
+                    className="text-xs md:text-sm text-white px-3 py-1 rounded-full font-extralight shadow-lg hover:scale-105 transition-transform duration-200 border-[0.5px] border-blue-700"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
             {/* Mobile view content */}
             <div className="md:hidden flex flex-col items-center justify-center p-4 bg-black/20 text-white">
               <h3 className="mb-2 text-lg font-semibold text-center">{project.name}</h3>

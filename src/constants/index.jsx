@@ -63,7 +63,8 @@ export const PROJECTS = [
     githubLink: "https://github.com/govinddwivedi-git/apex-learning",
     liveLink: "#",
     isLive: true,
-    comingSoon : true
+    comingSoon : true,
+    techStack : ["React", "Tailwind", "TypeScript", "MongoDB", "ExpressJS"]
   },
   {
     id: 2,
@@ -74,6 +75,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/govinddwivedi-git/apex-learning",
     liveLink: "https://apex-learning-two.vercel.app/",
     isLive: true,
+    techStack: ["NextJS", "Gemini API", "Inngest", "Drizzle ORM", "PostgreSQL"]
   },
   {
     id: 4,
@@ -84,6 +86,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/govinddwivedi-git/govind-dwivedi",
     liveLink: "https://govind-dwivedi.vercel.app/",
     isLive : true,
+    techStack: ["React", "Tailwind", "Framer Motion", "Vercel"]
   },
   {
     id: 3,
@@ -94,6 +97,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/govinddwivedi-git/competitive-programming-tracker",
     liveLink: "#",
     isLive : false,
+    techStack: ["React", "Node.js", "MySQL"]
   },
   {
     id: 5,
@@ -104,6 +108,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/govinddwivedi-git/chatbot-for-students-queries",
     liveLink: "#",
     isLive : false,
+    techStack: ["Python", "Gemini API", "RAG", "Flask"]
   },
   {
     id: 6,
@@ -114,6 +119,7 @@ export const PROJECTS = [
     githubLink: "https://github.com/govinddwivedi-git/CodeHorses",
     liveLink: "#",
     isLive : false,
+    techStack: ["JavaScript", "CodeMirror", "Node.js", "CompileX"]
   },
   // {
   //   id: 6,

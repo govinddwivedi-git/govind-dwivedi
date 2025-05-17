@@ -100,11 +100,32 @@ export default function ProblemSolving() {
           const gfgResponse = await fetch(`/api/gfg`);
           const gfgData = await gfgResponse.json();
 
-          if (gfgData) {
+          // Make sure we have a valid data structure before setting state
+          if (gfgData && gfgData.info) {
             setGfgData(gfgData);
+          } else {
+            throw new Error("Invalid GFG data structure");
           }
         } catch (error) {
           console.error("GFG API Error:", error);
+          // Set default data to avoid errors in rendering
+          setGfgData({
+            info: {
+              userName: 'govinddwivedi',
+              fullName: 'GOVIND DWIVEDI',
+              profilePicture: '',
+              instituteRank: 'N/A',
+              currentStreak: 0,
+              totalProblemsSolved: 0
+            },
+            solvedStats: {
+              school: { count: 0 },
+              basic: { count: 0 },
+              easy: { count: 0 },
+              medium: { count: 0 },
+              hard: { count: 0 }
+            }
+          });
         }
       } catch (error) {
         console.error("Error:", error);
@@ -609,37 +630,37 @@ export default function ProblemSolving() {
                     <p>
                       <span className="font-medium">School:</span>{" "}
                       <span className="text-blue-300">
-                        {gfgData.solvedStats.school.count}
+                        {gfgData.solvedStats?.school?.count || 0}
                       </span>
                     </p>
                     <p>
                       <span className="font-medium">Basic:</span>{" "}
                       <span className="text-blue-400">
-                        {gfgData.solvedStats.basic.count}
+                        {gfgData.solvedStats?.basic?.count || 0}
                       </span>
                     </p>
                     <p>
                       <span className="font-medium">Easy:</span>{" "}
                       <span className="text-green-600">
-                        {gfgData.solvedStats.easy.count}
+                        {gfgData.solvedStats?.easy?.count || 0}
                       </span>
                     </p>
                     <p>
                       <span className="font-medium">Medium:</span>{" "}
                       <span className="text-yellow-600">
-                        {gfgData.solvedStats.medium.count}
+                        {gfgData.solvedStats?.medium?.count || 0}
                       </span>
                     </p>
                     <p>
                       <span className="font-medium">Hard:</span>{" "}
                       <span className="text-red-600">
-                        {gfgData.solvedStats.hard.count}
+                        {gfgData.solvedStats?.hard?.count || 0}
                       </span>
                     </p>
                     <p>
                       <span className="font-medium">Total:</span>{" "}
                       <span className="text-blue-600">
-                        {gfgData.info.totalProblemsSolved}
+                        {gfgData.info?.totalProblemsSolved || 0}
                       </span>
                     </p>
                   </div>

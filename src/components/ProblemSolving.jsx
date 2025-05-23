@@ -449,7 +449,7 @@ export default function ProblemSolving() {
               transition={{ duration: 1, delay: 0.6 }}
               className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
             >
-              <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
+              <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">
                 LeetCode Statistics
                 <SiLeetcode className="text-4xl text-yellow-600 lg:text-5xl" />
               </h3>
@@ -480,7 +480,20 @@ export default function ProblemSolving() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-6 text-lg">
+              <div className="w-full mb-2 rounded-lg">
+                <iframe 
+                  src="https://leetcard.jacoblin.cool/govinddwivedi?ext=contest" 
+                  width="100%" 
+                  height="412" 
+                  frameBorder="0" 
+                  className="w-full scale-100 bg-transparent"
+                  title="LeetCode Stats"
+                  loading="lazy"
+                  style={{ marginBottom: "-20px" }}
+                />
+              </div>
+              
+              {/* <div className="grid grid-cols-2 gap-6 text-lg">
                 <div className="p-4 rounded-lg">
                   <h4 className="text-lg font-semibold mb-2">
                     Problem Solving
@@ -548,7 +561,8 @@ export default function ProblemSolving() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
+              
             </motion.div>
           ) : (
             <motion.div

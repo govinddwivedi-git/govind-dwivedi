@@ -9,7 +9,8 @@ import {
   FaCss3Alt,
 } from "react-icons/fa6";
 import { FaCode, FaJava } from 'react-icons/fa';
-
+import { RiNextjsFill } from "react-icons/ri";
+import { BiLogoTypescript } from "react-icons/bi";
 import projectImage1 from "../assets/project1.jpeg";
 import projectImage2 from "../assets/project2.jpeg";
 import projectImage3 from "../assets/project3.jpeg";
@@ -26,7 +27,7 @@ import voluntree from "../assets/volunteer.png"
 
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs, TbBrandPython, TbBrandPhp, TbBrandVue } from "react-icons/tb";
-import { SiMongodb, SiJavascript, SiDjango, SiDocker, SiGit, SiC, SiCplusplus, SiTailwindcss } from "react-icons/si";
+import { SiMongodb, SiJavascript, SiDjango, SiDocker, SiGit, SiC, SiCplusplus, SiTailwindcss, SiExpress, SiFlask, SiFastapi, SiMysql, SiFirebase, SiGithubactions, SiNetlify, SiVercel, SiLinux, SiPostman } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 
 
@@ -160,6 +161,10 @@ export const SKILLS = {
       name: "JavaScript",
     },
     {
+      icon: <BiLogoTypescript className="text-4xl text-blue-600 lg:text-5xl" />,
+      name: "TypeScript",
+    },
+    {
       icon: <TbBrandPhp className="text-4xl text-purple-600 lg:text-5xl" />,
       name: "PHP",
     },
@@ -185,6 +190,10 @@ export const SKILLS = {
       icon: <TbBrandVue className="text-4xl text-green-500 lg:text-5xl" />,
       name: "Vue.js",
     },
+    {
+      icon: <RiNextjsFill  className="text-4xl text-white-600 lg:text-5xl" />,
+      name: "Next.js",
+    },
   ],
   backendDevelopment: [
     {
@@ -192,23 +201,43 @@ export const SKILLS = {
       name: "Node.js",
     },
     {
+    icon: <SiExpress className="text-4xl text-gray-500 lg:text-5xl" />,
+    name: "Express.js",
+  },
+    {
       icon: <SiDjango className="text-4xl text-green-800 lg:text-5xl" />,
       name: "Django",
     },
+    {
+    icon: <SiFastapi className="text-4xl text-teal-500 lg:text-5xl" />,
+    name: "FastAPI",
+  },
+  {
+    icon: <SiFlask className="text-4xl text-yellow-400 lg:text-5xl" />,
+    name: "Flask",
+  },
   ],
   database: [
     {
-      icon: <BiLogoPostgresql className="text-4xl text-sky-700 lg:text-5xl" />,
-      name: "SQL",
+      icon: <SiMysql className="text-4xl text-orange-400 lg:text-5xl" />,
+      name: "MySQL",
     },
     {
-      icon: <BiLogoMongodb className="text-4xl text-green-700 lg:text-5xl" />,
-      name: "MongoDB",
-    },
+    icon: <BiLogoPostgresql className="text-4xl text-sky-700 lg:text-5xl" />,
+    name: "PostgreSQL",
+  },
+  {
+    icon: <BiLogoMongodb className="text-4xl text-green-700 lg:text-5xl" />,
+    name: "MongoDB",
+  },
+  {
+    icon: <SiFirebase className="text-4xl text-yellow-500 lg:text-5xl" />,
+    name: "Firebase",
+  },
   ],
   devTools: [
     {
-      icon: <VscVscode className="text-4xl text-blue-500 lg:text-5xl" />, // Changed from SiVisualstudio
+      icon: <VscVscode className="text-4xl text-blue-500 lg:text-5xl" />, 
       name: "VS Code",
     },
     {
@@ -223,6 +252,22 @@ export const SKILLS = {
       icon: <VscGithub className="text-4xl lg:text-5xl" />,
       name: "Github",
     },
+    {
+    icon: <SiPostman className="text-4xl text-orange-500 lg:text-5xl" />,
+    name: "Postman",
+  },
+  {
+    icon: <SiLinux className="text-4xl text-gray-600 lg:text-5xl" />,
+    name: "Linux",
+  },
+  {
+    icon: <SiVercel className="text-4xl text-white lg:text-5xl" />,
+    name: "Vercel",
+  },
+  {
+    icon: <SiNetlify className="text-4xl text-green-500 lg:text-5xl" />,
+    name: "Netlify",
+  },
   ],
 };
 // Dummy Data

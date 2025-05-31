@@ -480,17 +480,19 @@ export default function ProblemSolving() {
                 </div>
               </div>
 
-              <div className="w-full mb-2 rounded-lg">
-                <iframe 
-                  src="https://leetcard.jacoblin.cool/govinddwivedi?ext=contest" 
-                  width="100%" 
-                  height="412" 
-                  frameBorder="0" 
-                  className="w-full scale-100 bg-transparent"
-                  title="LeetCode Stats"
-                  loading="lazy"
-                  style={{ marginBottom: "-20px" }}
-                />
+              <div className="w-full mb-2 rounded-lg flex justify-center items-center">
+                <div className="w-full flex justify-center">
+                  <iframe 
+                    src="https://leetcard.jacoblin.cool/govinddwivedi?ext=contest" 
+                    width="500"
+                    height="412"
+                    frameBorder="0"
+                    className="bg-transparent"
+                    title="LeetCode Stats"
+                    loading="lazy"
+                    style={{ maxWidth: "100%" }}
+                  />
+                </div>
               </div>
               
               {/* <div className="grid grid-cols-2 gap-6 text-lg">

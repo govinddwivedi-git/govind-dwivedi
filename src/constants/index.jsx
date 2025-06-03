@@ -23,6 +23,7 @@ import CodeHorses from "../assets/codehorses.png"
 import CPT from "../assets/cp.png"
 import portfolio from "../assets/portfolio.png"
 import voluntree from "../assets/volunteer.png"
+import cbcomp from "../assets/chatbotcomp.png";
 
 
 import { RiReactjsLine } from "react-icons/ri";
@@ -88,6 +89,17 @@ export const PROJECTS = [
     liveLink: "https://govind-dwivedi.vercel.app/",
     isLive : true,
     techStack: ["ReactJS", "Tailwind", "Framer Motion", "Vercel"]
+  },
+  {
+    id: 7,
+    name: "ChatBot with Image Analysis ",
+    description:
+    "A real-time AI chat application powered by Google Gemini 2.0 Flash, featuring image upload and analysis, persistent chat history with MongoDB, and a modern, responsive UI. It includes typing indicators for a live chat feel and auto-scrolling for smooth conversation flow.",
+    image: cbcomp,
+    githubLink: "https://github.com/govinddwivedi-git/chat-bot-component",
+    liveLink: "https://chat-bot-component.vercel.app/",
+    isLive : true,
+    techStack: ["ReactJS", "Gemini API", "Cloudinary", "MongoDB", "ExpressJS", "Multer"]
   },
   {
     id: 3,

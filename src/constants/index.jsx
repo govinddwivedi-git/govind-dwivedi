@@ -320,7 +320,7 @@ export const EDUCATION = [
     institution: "Indian Institute of Information Technology, Jabalpur, Madhya Pradesh",
     duration: "2023 - 2027",
     description:
-      "Pursuing a B.Tech in Computer Science at IIIT Jabalpur, with a strong foundation in problem-solving and web development. Currently maintaining a 9.7 CPI while actively exploring new technologies and contributing to impactful projects. Eager to collaborate, learn, and take on new challenges.",
+      "Pursuing a B.Tech in Computer Science at IIIT Jabalpur, with a strong foundation in problem-solving and web development. Currently maintaining a 9.8 CPI while actively exploring new technologies and contributing to impactful projects. Eager to collaborate, learn, and take on new challenges.",
   },
 ];
 

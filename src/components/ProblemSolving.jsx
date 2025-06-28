@@ -25,7 +25,7 @@ export default function ProblemSolving() {
         // Fetch CodeChef data
         if (user) {
           const statsResponse = await fetch(
-            `https://codechef-api.vercel.app/handle/${user}`
+            `https://codechef-unofficial-api.vercel.app/${user}`
           );
           const data = await statsResponse.json();
           if (data.success) {

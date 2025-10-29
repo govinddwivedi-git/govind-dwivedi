@@ -41,7 +41,7 @@ export const NAVIGATION_LINKS = [
   // { label: "Bio", href: "#bio" },
   { label: "CP / DSA", href: "#cp-dsa" },
   { label: "Skills", href: "#skills" },
-  // { label: "Work Experience", href: "#work" },
+  { label: "Work Experience", href: "#work" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
@@ -282,30 +282,16 @@ export const SKILLS = {
   },
   ],
 };
-// Dummy Data
-// export const EXPERIENCES = [
-//   {
-//     title: "Lead Frontend Developer",
-//     company: "Innovative Tech Solutions",
-//     duration: "July 2020 - Present",
-//     description:
-//       "As the Lead Frontend Developer, I spearheaded the development of advanced web applications using cutting-edge technologies like React, Redux, and TypeScript. I worked closely with cross-functional teams, including designers, product managers, and backend developers, to deliver seamless and high-performance user experiences.",
-//   },
-//   {
-//     title: "Frontend Engineer",
-//     company: "Digital Creations",
-//     duration: "February 2016 - June 2020",
-//     description:
-//       "At Digital Creations, I focused on building highly interactive and responsive web interfaces using HTML, CSS, JavaScript, and modern libraries like React. I collaborated closely with UX/UI designers to implement design changes that enhanced user engagement and satisfaction. My role involved optimizing website performance, ensuring cross-browser compatibility, and implementing SEO best practices. ",
-//   },
-//   {
-//     title: "Junior Web Developer",
-//     company: "Bright Future Technologies",
-//     duration: "August 2014 - January 2016",
-//     description:
-//       "In my role as a Junior Web Developer, I assisted in the development and maintenance of various web applications. I gained hands-on experience in utilizing HTML, CSS, and JavaScript to create user-friendly interfaces. I actively participated in team meetings, contributed to project planning, and collaborated with senior developers to implement new features.",
-//   },
-// ];
+export const EXPERIENCES = [
+  {
+    title: "Runner JP Morgan Chase <Code For Good> Hackathon",
+    company: "JPMorgan Chase & Co.",
+    duration: "June 2025",
+    description:
+      "Selected as 1 of 186 finalists from 60,000+ applicants. Built a secure, scalable website for NGO Purnata to combat human trafficking. Created a case management system for them to assist in tracking 100+ cases of human trafficking. Implemented victim tracking, audit logs, and role-based access control, improving NGO reporting efficiency by 40%.",
+  },
+  
+];
 
 export const EDUCATION = [
   {

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import { EXPERIENCES } from "../constants";
+import { EXPERIENCES } from "../constants";
 
 export default function WorkExperience() {
 
@@ -25,7 +25,7 @@ export default function WorkExperience() {
             initial={{ opacity: 0, x:-20 }}
             whileInView={{ opacity: 1, x:0 }}
             transition={{ duration: 1, delay: index * 0.2 }}
-            className="rounded-xl border border-stone-50/30 bg-white/10 p-4"
+            className="rounded-xl border-2 border-yellow-400 bg-white/10 p-4 hover:shadow-lg hover:shadow-yellow-400/20"
             key={index}
             whileHover={{ scale: 1.02, transition: { duration: 0.2} }}
         

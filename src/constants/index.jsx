@@ -50,7 +50,7 @@ export const HERO = {
   name: "GOVIND DWIVEDI",
   greet: "Hello there!",
   description:
-    "I'm a second-year BTech CSE student at the Indian Institute of Information Technology, Jabalpur, Madhya Pradesh. I have a keen interest in problem-solving, web development, and contributing to open-source projects. I love exploring and learning new technologies, applying them to solve real-world problems, and collaborating with others. I also enjoy spending time on competitive programming, sharpening my coding skills.",
+    "I'm a pre-final year BTech CSE student at the Indian Institute of Information Technology, Jabalpur, Madhya Pradesh. I have a keen interest in problem-solving, web development, and contributing to open-source projects. I love exploring and learning new technologies, applying them to solve real-world problems, and collaborating with others. I also enjoy spending time on competitive programming, sharpening my coding skills.",
 };
 
 export const USER = "govinddwivedi";
@@ -306,7 +306,7 @@ export const EDUCATION = [
     institution: "Indian Institute of Information Technology, Jabalpur, Madhya Pradesh",
     duration: "2023 - 2027",
     description:
-      "Pursuing a B.Tech in Computer Science at IIIT Jabalpur, with a strong foundation in problem-solving and web development. Currently maintaining a 9.8 CPI while actively exploring new technologies and contributing to impactful projects. Eager to collaborate, learn, and take on new challenges.",
+      "Pursuing a B.Tech in Computer Science at IIIT Jabalpur, with a strong foundation in problem-solving and web development. Currently maintaining a 9.6 CPI while actively exploring new technologies and contributing to impactful projects. Eager to collaborate, learn, and take on new challenges.",
   },
 ];
 

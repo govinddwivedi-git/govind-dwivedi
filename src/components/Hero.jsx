@@ -1,5 +1,5 @@
 import { HERO } from "../constants";
-import  govindImg  from "../assets/govind.png";
+import  govindImg  from "../assets/image.png";
 import { motion} from "framer-motion";
 
 const Hero = () => {
@@ -23,7 +23,16 @@ const Hero = () => {
       </motion.div>
       <motion.div className="w-full md:w-1/2 lg:p-8" initial = {{ opacity: 0 , scale:0.8}} animate = {{ opacity: 1 , scale:1}} transition = {{duration : 1}}>
         <div className="flex justify-center">
-          <motion.img className="rounded-3xl mt-4" src={govindImg} width={550} height={550} alt="Govind Dwivedi" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}} />
+          <motion.img 
+            className="rounded-3xl mt-4 border-t-2 border-b-2 border-r-2 border-yellow-400" 
+            src={govindImg} 
+            width={550} 
+            height={550} 
+            alt="Govind Dwivedi" 
+            initial={{opacity:0}} 
+            animate={{opacity:1}} 
+            transition={{duration:1}} 
+          />
         </div>
       </motion.div>
       

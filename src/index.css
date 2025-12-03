@@ -77,8 +77,11 @@ body {
   border-radius: 100px;
   padding: 0.18rem;
   z-index: -1; /* This line prevents the overlapping of div on which it is applied */
-  background: linear-gradient(to right, #8e44ad, #3498db, #6a11cb, #5e60ce, #8e44ad);
-  /* background: linear-gradient(to right, #f472b6, #64748b, #8b5cf6); */
+  /* background: linear-gradient(to right, #8e44ad, #3498db, #6a11cb, #5e60ce, #8e44ad); */
+  /* background: linear-gradient(to right, #fa2894, #04e0f8, #7337ff); */
+  /* background: linear-gradient(to right, #fa2894, #ea2f2f, #04e0f8, #7337ff); */
+  background: linear-gradient(to right, #ff0184, #7a2f3a, #049a97, #4e02ff);
+  /* background: linear-gradient(to right, #fa2894, #ea2f4b, #04f8f4, #4e02ff); */
   /* background: linear-gradient(to right, #f64f59, #f9d423); */
   /* background: linear-gradient(to right, #1e3c72, #2a5298); */
   /* background: linear-gradient(to right, #6a11cb, #2575fc, #00d2ff, #3a7bd5);   */

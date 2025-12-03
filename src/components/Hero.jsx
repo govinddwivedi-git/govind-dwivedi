@@ -14,12 +14,12 @@ const Hero = () => {
         <div className="flex items-center"
         >
           
-          <p className="p-2 text-3xl font-bold tracking-tighter lg:text-4xl gsubtext">
+          <p className="p-2 text-3xl font-bold tracking-tighter text-yellow-300 lg:text-4xl">
             {HERO.greet}
           </p>
           <span className="text-3xl lg:text-4xl">👋🏻</span>
         </div>
-        <p className="mb-8 p-2 text-xl gtext font-semibold">{HERO.description}</p>
+        <p className="mb-8 p-2 text-xl text-slate-400 font-semibold">{HERO.description}</p>
       </motion.div>
       <motion.div className="w-full md:w-1/2 lg:p-8" initial = {{ opacity: 0 , scale:0.8}} animate = {{ opacity: 1 , scale:1}} transition = {{duration : 1}}>
         <div className="flex justify-center">

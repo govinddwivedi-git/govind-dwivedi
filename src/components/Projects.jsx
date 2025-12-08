@@ -44,7 +44,7 @@ function Projects() {
         >
           ✨ Featured Work
         </motion.span>
-        <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-white via-yellow-100 to-amber-200 bg-clip-text text-transparent">
+        <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r text-white bg-clip-text text-transparent">
           Projects
         </h2>
         <p className="text-slate-400 mt-4 text-lg max-w-md mx-auto">
@@ -173,7 +173,7 @@ const ProjectCard = ({ project }) => {
 
       {/* Floating tech badges - Right side vertical layout */}
       <div className="absolute top-5 right-5 bottom-20 flex flex-col gap-2 z-10 items-end">
-        {project.techStack?.slice(0, 6).map((tech, index) => (
+        {project.techStack?.map((tech, index) => (
           <motion.span 
             key={index}
             className="text-xs text-white px-3 py-1.5 rounded-full font-medium backdrop-blur-xl border border-white/20 shadow-lg whitespace-nowrap"

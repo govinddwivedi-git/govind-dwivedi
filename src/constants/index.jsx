@@ -57,40 +57,6 @@ export const USER = "govinddwivedi";
 
 export const PROJECTS = [
   {
-    id: 1,
-    name: "Voluntree: Make A Difference",
-    description:
-      "Voluntree is a comprehensive volunteer management platform that connects passionate volunteers with meaningful causes to create positive change in communities. It is our HackByte 3.0 hackathon project built within strict deadline of 36 hours.",
-    image: voluntree,
-    githubLink: "https://github.com/govinddwivedi-git/apex-learning",
-    liveLink: "#",
-    isLive: true,
-    comingSoon : true,
-    techStack : ["ReactJS", "Tailwind", "TypeScript", "MongoDB", "ExpressJS", "NodeJS"]
-  },
-  {
-    id: 2,
-    name: "Apex Learning: AI-Powered Learning Platform",
-    description:
-      "Apex Learning is an innovative AI-powered learning platform that helps students and professionals create personalized study materials, practice tests, and educational content.",
-    image: apexlearning,
-    githubLink: "https://github.com/govinddwivedi-git/apex-learning",
-    liveLink: "https://apex-learning-two.vercel.app/",
-    isLive: true,
-    techStack: ["NextJS", "Gemini API", "Inngest", "Drizzle ORM", "PostgreSQL"]
-  },
-  {
-    id: 4,
-    name: "Personal Portfolio Website",
-    description:
-    "A modern, responsive portfolio website built with React, Framer Motion, and Tailwind CSS to showcase my skills, projects, education, and work experience.",
-    image: portfolio,
-    githubLink: "https://github.com/govinddwivedi-git/govind-dwivedi",
-    liveLink: "https://govind-dwivedi.vercel.app/",
-    isLive : true,
-    techStack: ["ReactJS", "Tailwind", "Framer Motion", "Vercel"]
-  },
-  {
     id: 7,
     name: "ChatBot with Image Analysis ",
     description:
@@ -102,48 +68,82 @@ export const PROJECTS = [
     techStack: ["ReactJS", "Gemini API", "Cloudinary", "MongoDB", "ExpressJS", "Multer"]
   },
   {
-    id: 3,
-    name: "CP Community Tracker",
-    description:
-      "A comprehensive platform for tracking and analyzing competitive programming performance across multiple coding platforms. This system helps students monitor their progress and rankings across different competitive programming websites while providing detailed analysis of their coding journey.",
-    image: CPT,
-    githubLink: "https://github.com/govinddwivedi-git/competitive-programming-tracker",
-    liveLink: "#",
-    isLive : false,
-    techStack: ["ReactJS", "Node.js", "MySQL", "ExpressJS", "Tailwind"]
-  },
-  {
-    id: 5,
-    name: "Student Query Resolution Chatbot",
-    description:
-      "An interactive chatbot system designed to help resolve student queries efficiently. The system features both user and admin interfaces, allowing for dynamic query handling and response management.",
-    image: chatbot,
-    githubLink: "https://github.com/govinddwivedi-git/chatbot-for-students-queries",
-    liveLink: "#",
-    isLive : false,
-    techStack: ["React", "Python", "Gemini API", "RAG", "Flask"]
-  },
-  {
     id: 6,
     name: "Web-Based Code Editor and Compiler",
     description:
-      "This project is a web-based code editor and compiler, built using CodeMirror for code editing and CompileX for code compilation.",
+    "This project is a web-based code editor and compiler, built using CodeMirror for code editing and CompileX for code compilation.",
     image: CodeHorses,
     githubLink: "https://github.com/govinddwivedi-git/CodeHorses",
     liveLink: "#",
     isLive : false,
     techStack: ["JavaScript", "CodeMirror", "Node.js", "CompileX", "Bootstrap"]
   },
+  {
+    id: 5,
+    name: "Student Query Resolution Chatbot",
+    description:
+      "An interactive chatbot system designed to help resolve student queries efficiently. The system features both user and admin interfaces, allowing for dynamic query handling and response management.",
+      image: chatbot,
+      githubLink: "https://github.com/govinddwivedi-git/chatbot-for-students-queries",
+      liveLink: "#",
+    isLive : false,
+    techStack: ["React", "Python", "Gemini API", "RAG", "Flask"]
+  },
   // {
-  //   id: 6,
-  //   name: "Chat Application",
-  //   description:
-  //     "A real-time chat application using Firebase for backend services, including user authentication, chat rooms, and instant messaging features. Built with React and Firebase.",
-  //   image: projectImage6,
-  //   githubLink: "https://github.com/user/chat-application",
-  //   liveLink: "#",
-  //   isLive : false,
-  // },
+    //   id: 6,
+    //   name: "Chat Application",
+    //   description:
+    //     "A real-time chat application using Firebase for backend services, including user authentication, chat rooms, and instant messaging features. Built with React and Firebase.",
+    //   image: projectImage6,
+    //   githubLink: "https://github.com/user/chat-application",
+    //   liveLink: "#",
+    //   isLive : false,
+    // },
+    {
+      id: 4,
+      name: "Personal Portfolio Website",
+      description:
+      "A modern, responsive portfolio website built with React, Framer Motion, and Tailwind CSS to showcase my skills, projects, education, and work experience.",
+      image: portfolio,
+      githubLink: "https://github.com/govinddwivedi-git/govind-dwivedi",
+      liveLink: "https://govind-dwivedi.vercel.app/",
+      isLive : true,
+      techStack: ["ReactJS", "Tailwind", "Framer Motion", "Vercel"]
+    },
+    {
+      id: 3,
+      name: "CP Community Tracker",
+      description:
+        "A comprehensive platform for tracking and analyzing competitive programming performance across multiple coding platforms. This system helps students monitor their progress and rankings across different competitive programming websites while providing detailed analysis of their coding journey.",
+      image: CPT,
+      githubLink: "https://github.com/govinddwivedi-git/competitive-programming-tracker",
+      liveLink: "#",
+      isLive : false,
+      techStack: ["ReactJS", "Node.js", "MySQL", "ExpressJS", "Tailwind"]
+    },
+    {
+    id: 2,
+    name: "Apex Learning: AI-Powered Learning Platform",
+    description:
+    "Apex Learning is an innovative AI-powered learning platform that helps students and professionals create personalized study materials, practice tests, and educational content.",
+    image: apexlearning,
+    githubLink: "https://github.com/govinddwivedi-git/apex-learning",
+    liveLink: "https://apex-learning-two.vercel.app/",
+    isLive: true,
+    techStack: ["NextJS", "Gemini API", "Inngest", "Drizzle ORM", "PostgreSQL"]
+  },
+  {
+    id: 1,
+    name: "Voluntree: Make A Difference",
+    description:
+      "Voluntree is a comprehensive volunteer management platform that connects passionate volunteers with meaningful causes to create positive change in communities. It is our HackByte 3.0 hackathon project built within strict deadline of 36 hours.",
+    image: voluntree,
+    githubLink: "https://github.com/govinddwivedi-git/apex-learning",
+    liveLink: "#",
+    isLive: true,
+    comingSoon : true,
+    techStack : ["ReactJS", "Tailwind", "TypeScript", "MongoDB", "ExpressJS", "NodeJS"]
+  },
 ];
 
 export const BIO = [

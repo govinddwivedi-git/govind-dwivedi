@@ -66,7 +66,7 @@ function Projects() {
 
       {/* Navigation controls */}
       <motion.div 
-        className="flex flex-col items-center justify-center gap-4 text-slate-500 mt-4 relative z-10"
+        className="flex flex-col items-center justify-center gap-4 text-slate-500 mt-1 relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.8 }}

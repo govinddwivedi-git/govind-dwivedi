@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { USER } from "../constants/index";
 import gfglogo from "../assets/gfglogo.jpeg";
 import lclogo from "../assets/lclogo.png";
@@ -10,6 +10,7 @@ import {
   SiLeetcode,
 } from "react-icons/si";
 import { motion } from "framer-motion";
+import TargetCursor from "../ui/TargetCursor";
 
 export default function ProblemSolving() {
   const [codechefData, setCodechefData] = useState(null);
@@ -198,14 +199,20 @@ export default function ProblemSolving() {
         CP / DSA
       </motion.h2>
       <div className="container mx-auto px-4">
+        <TargetCursor
+        spinDuration={2}
+        hideDefaultCursor={true}
+        parallaxOn={true}
+      />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2">
           {codechefData ? (
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
+              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30 cursor-target"
             >
+              
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
                 CodeChef Statistics
                 <SiCodechef className="text-4xl text-red-400 lg:text-5xl" />
@@ -327,7 +334,7 @@ export default function ProblemSolving() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
+              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30 cursor-target"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
                 Codeforces Statistics
@@ -447,7 +454,7 @@ export default function ProblemSolving() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
+              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30 cursor-target"
             >
               <h3 className="text-2xl font-semibold mb-2 flex justify-between items-center">
                 LeetCode Statistics
@@ -609,7 +616,7 @@ export default function ProblemSolving() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30"
+              className="rounded-3xl bg-black/20 backdrop-blur-lg p-6 border border-stone-50/30 cursor-target"
             >
               <h3 className="text-2xl font-semibold mb-6 flex justify-between items-center">
                 GeeksForGeeks Statistics

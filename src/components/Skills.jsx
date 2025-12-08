@@ -27,13 +27,13 @@ export default function Skills() {
       >
         Skills
       </motion.h2>
-      <ElectricBorder
-        color="#1cb2ba"
+      {/* <ElectricBorder */}
+        {/* color="#1cb2ba"
         speed={0.5}
         chaos={0.5}
         thickness={2}
         style={{ borderRadius: 16 }}
-      >
+      > */}
         <motion.div
           className="mx-2 flex flex-col gap-12 rounded-3xl px-4 py-8 lg:px-20 border border-stone-50/30"
           initial={{ opacity: 0 }}
@@ -73,7 +73,7 @@ export default function Skills() {
             </motion.div>
           ))}
         </motion.div>
-      </ElectricBorder>
+      {/* </ElectricBorder> */}
     </div>
   );
 }

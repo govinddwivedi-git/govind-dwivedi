@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { MdArrowOutward } from "react-icons/md";
 import { FiGithub, FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -126,11 +126,20 @@ function Projects() {
 const ProjectCard = ({ project }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const spotlightX = useTransform(mouseX, (v) => `${v}px`);
   const spotlightY = useTransform(mouseY, (v) => `${v}px`);
 
   const handleMouseMove = (e) => {
+    if (isMobile) return; // Skip on mobile
     const rect = e.currentTarget.getBoundingClientRect();
     mouseX.set(e.clientX - rect.left);
     mouseY.set(e.clientY - rect.top);
@@ -142,19 +151,23 @@ const ProjectCard = ({ project }) => {
       onMouseMove={handleMouseMove}
       style={{
         background: "linear-gradient(145deg, rgba(15,23,42,0.9) 0%, rgba(30,41,59,0.9) 100%)",
-        boxShadow: "0 25px 50px -12px rgba(234,179,8,0.3), inset 0 1px 0 0 rgba(255,255,255,0.1)",
+        boxShadow: isMobile 
+          ? "0 15px 30px -10px rgba(234,179,8,0.2)"
+          : "0 25px 50px -12px rgba(234,179,8,0.3), inset 0 1px 0 0 rgba(255,255,255,0.1)",
       }}
     >
-      {/* Spotlight effect following cursor */}
-      <motion.div
-        className="absolute pointer-events-none w-[400px] h-[400px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{
-          background: "radial-gradient(circle, rgba(234,179,8,0.15) 0%, transparent 60%)",
-          left: spotlightX,
-          top: spotlightY,
-          transform: "translate(-50%, -50%)",
-        }}
-      />
+      {/* Spotlight effect - only on desktop */}
+      {!isMobile && (
+        <motion.div
+          className="absolute pointer-events-none w-[400px] h-[400px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style={{
+            background: "radial-gradient(circle, rgba(234,179,8,0.15) 0%, transparent 60%)",
+            left: spotlightX,
+            top: spotlightY,
+            transform: "translate(-50%, -50%)",
+          }}
+        />
+      )}
 
       {/* Border glow */}
       <div className="absolute inset-0 rounded-3xl border border-yellow-400/20 group-hover:border-yellow-400/40 transition-colors duration-500" />
@@ -164,29 +177,33 @@ const ProjectCard = ({ project }) => {
         <img
           src={project.image}
           alt={project.name}
-          className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
+          className={`h-full w-full object-cover ${isMobile ? '' : 'transition-all duration-700 group-hover:scale-105'}`}
           draggable={false}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/30" />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {!isMobile && (
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        )}
       </div>
 
-      {/* Floating tech badges - Right side vertical layout */}
-      <div className="absolute top-5 right-5 bottom-20 flex flex-col gap-2 z-10 items-end">
-        {project.techStack?.map((tech, index) => (
+      {/* Floating tech badges - Horizontal on mobile, vertical on desktop */}
+      <div className={`absolute z-10 ${isMobile ? 'top-3 left-3 right-3 flex flex-wrap gap-1.5' : 'top-5 right-5 bottom-20 flex flex-col gap-2 items-end'}`}>
+        {project.techStack?.slice(0, isMobile ? 4 : undefined).map((tech, index) => (
           <motion.span 
             key={index}
-            className="text-xs text-white px-3 py-1.5 rounded-full font-medium backdrop-blur-xl border border-white/20 shadow-lg whitespace-nowrap"
+            className={`text-white font-medium backdrop-blur-md border border-white/20 shadow-lg whitespace-nowrap ${isMobile ? 'text-[10px] px-2 py-1 rounded-md' : 'text-xs px-3 py-1.5 rounded-full'}`}
             style={{
               background: "rgba(255, 255, 255, 0.1)",
-              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.1)",
+              boxShadow: isMobile 
+                ? "0 4px 16px rgba(0, 0, 0, 0.2)"
+                : "0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.1)",
               WebkitBackdropFilter: "blur(16px)",
               backdropFilter: "blur(16px)",
             }}
-            initial={{ opacity: 0, x: 20, scale: 0.8 }}
+            initial={isMobile ? { opacity: 1 } : { opacity: 0, x: 20, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ delay: index * 0.08, type: "spring", stiffness: 300 }}
-            whileHover={{ 
+            transition={isMobile ? { duration: 0 } : { delay: index * 0.08, type: "spring", stiffness: 300 }}
+            whileHover={isMobile ? {} : { 
               scale: 1.05, 
               x: -5,
               background: "rgba(255, 255, 255, 0.2)",
@@ -196,39 +213,46 @@ const ProjectCard = ({ project }) => {
             {tech}
           </motion.span>
         ))}
+        {isMobile && project.techStack?.length > 4 && (
+          <span className="text-[10px] text-white/70 px-2 py-1 rounded-md backdrop-blur-md border border-white/10" style={{ background: "rgba(255,255,255,0.05)" }}>
+            +{project.techStack.length - 4}
+          </span>
+        )}
       </div>
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-        <div className="transform transition-all duration-500 group-hover:-translate-y-2">
-          {/* Project number */}
-          <span className="text-7xl font-black text-white/30 absolute -top-4 right-6 select-none">
-            {String(project.id).padStart(2, '0')}
-          </span>
+      <div className={`absolute inset-0 flex flex-col justify-end ${isMobile ? 'p-4' : 'p-6 md:p-8'}`}>
+        <div className={`${isMobile ? '' : 'transform transition-all duration-500 group-hover:-translate-y-2'}`}>
+          {/* Project number - hidden on mobile */}
+          {!isMobile && (
+            <span className="text-7xl font-black text-white/30 absolute -top-4 right-6 select-none">
+              {String(project.id).padStart(2, '0')}
+            </span>
+          )}
           
-          <h3 className="text-2xl md:text-4xl font-bold text-white mb-3 tracking-tight">
+          <h3 className={`font-bold text-white tracking-tight ${isMobile ? 'text-xl mb-2' : 'text-2xl md:text-4xl mb-3'}`}>
             {project.name}
           </h3>
-          <p className="text-slate-300/90 text-sm md:text-base leading-relaxed mb-6 max-w-lg line-clamp-2 group-hover:line-clamp-none transition-all duration-500">
+          <p className={`text-slate-300/90 leading-relaxed mb-4 ${isMobile ? 'text-xs line-clamp-2' : 'text-sm md:text-base mb-6 max-w-lg line-clamp-2 group-hover:line-clamp-none transition-all duration-500'}`}>
             {project.description}
           </p>
         </div>
 
-        {/* Action buttons with stagger animation */}
-        <div className="flex gap-3 flex-wrap">
+        {/* Action buttons */}
+        <div className="flex gap-2 md:gap-3 flex-wrap">
           <motion.a
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             onPointerDown={(e) => e.stopPropagation()}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.95 }}
+            className={`flex items-center gap-1.5 md:gap-2 rounded-full bg-white text-slate-900 font-semibold shadow-lg ${isMobile ? 'px-3 py-2 text-xs' : 'px-5 py-2.5 text-sm hover:bg-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95'}`}
+            whileHover={isMobile ? {} : { y: -2 }}
+            whileTap={isMobile ? {} : { scale: 0.95 }}
           >
-            <FiGithub className="text-lg" />
-            <span>Source Code</span>
-            <MdArrowOutward className="text-sm" />
+            <FiGithub className={isMobile ? 'text-sm' : 'text-lg'} />
+            <span>{isMobile ? 'Code' : 'Source Code'}</span>
+            {!isMobile && <MdArrowOutward className="text-sm" />}
           </motion.a>
           {project.isLive && (
             <motion.a
@@ -237,24 +261,26 @@ const ProjectCard = ({ project }) => {
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               onPointerDown={(e) => e.stopPropagation()}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              className={`flex items-center gap-1.5 md:gap-2 rounded-full font-semibold text-slate-900 shadow-lg ${isMobile ? 'px-3 py-2 text-xs' : 'px-5 py-2.5 text-sm transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95'}`}
               style={{
                 background: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%)",
               }}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={isMobile ? {} : { y: -2 }}
+              whileTap={isMobile ? {} : { scale: 0.95 }}
             >
-              <HiOutlineExternalLink className="text-lg" />
-              <span>{project.comingSoon ? "Coming Soon" : "Live Demo"}</span>
+              <HiOutlineExternalLink className={isMobile ? 'text-sm' : 'text-lg'} />
+              <span>{project.comingSoon ? "Soon" : (isMobile ? "Live" : "Live Demo")}</span>
             </motion.a>
           )}
         </div>
       </div>
 
-      {/* Premium corner accent */}
-      <div className="absolute top-0 right-0 w-32 h-32 pointer-events-none">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-blue-500/20 via-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-      </div>
+      {/* Premium corner accent - only on desktop */}
+      {!isMobile && (
+        <div className="absolute top-0 right-0 w-32 h-32 pointer-events-none">
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-blue-500/20 via-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        </div>
+      )}
     </motion.div>
   );
 };

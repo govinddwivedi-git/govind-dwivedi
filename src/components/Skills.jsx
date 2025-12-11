@@ -55,7 +55,7 @@ export default function Skills() {
                 {skills.map((skill, index) => (
                   <motion.div
                     key={index}
-                    className="flex flex-col items-center justify-center p-4 rounded-xl border border-stone-50/10 hover:border-stone-50/30 transition-all duration-300"
+                    className="flex flex-col items-center justify-center p-4 rounded-xl border border-stone-50/10 cursor-target hover:border-stone-50/30 transition-all duration-300"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}

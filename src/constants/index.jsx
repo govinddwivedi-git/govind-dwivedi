@@ -18,6 +18,7 @@ import projectImage4 from "../assets/project4.jpeg";
 import projectImage5 from "../assets/project5.jpeg";
 import projectImage6 from "../assets/project6.jpeg";
 import apexlearning from "../assets/apexlearning.png"
+import apexlearningPro from "../assets/apex-learning-pro.png"
 import chatbot from "../assets/chatbot.png"
 import CodeHorses from "../assets/codehorses.png"
 import CPT from "../assets/cp.png"
@@ -57,7 +58,7 @@ export const USER = "govinddwivedi";
 
 export const PROJECTS = [
   {
-    id: 7,
+    id: 8,
     name: "ChatBot with Image Analysis ",
     description:
     "A real-time AI chat application powered by Google Gemini 2.0 Flash, featuring image upload and analysis, persistent chat history with MongoDB, and a modern, responsive UI. It includes typing indicators for a live chat feel and auto-scrolling for smooth conversation flow.",
@@ -68,7 +69,7 @@ export const PROJECTS = [
     techStack: ["ReactJS", "Gemini API", "Cloudinary", "MongoDB", "ExpressJS", "Multer"]
   },
   {
-    id: 6,
+    id: 7,
     name: "Web-Based Code Editor and Compiler",
     description:
     "This project is a web-based code editor and compiler, built using CodeMirror for code editing and CompileX for code compilation.",
@@ -79,7 +80,7 @@ export const PROJECTS = [
     techStack: ["JavaScript", "CodeMirror", "Node.js", "CompileX", "Bootstrap"]
   },
   {
-    id: 5,
+    id: 6,
     name: "Student Query Resolution Chatbot",
     description:
       "An interactive chatbot system designed to help resolve student queries efficiently. The system features both user and admin interfaces, allowing for dynamic query handling and response management.",
@@ -100,7 +101,7 @@ export const PROJECTS = [
     //   isLive : false,
     // },
     {
-      id: 4,
+      id: 5,
       name: "Personal Portfolio Website",
       description:
       "A modern, responsive portfolio website built with React, Framer Motion, and Tailwind CSS to showcase my skills, projects, education, and work experience.",
@@ -111,7 +112,7 @@ export const PROJECTS = [
       techStack: ["ReactJS", "Tailwind", "Framer Motion", "Vercel"]
     },
     {
-      id: 3,
+      id: 4,
       name: "CP Community Tracker",
       description:
         "A comprehensive platform for tracking and analyzing competitive programming performance across multiple coding platforms. This system helps students monitor their progress and rankings across different competitive programming websites while providing detailed analysis of their coding journey.",
@@ -122,7 +123,7 @@ export const PROJECTS = [
       techStack: ["ReactJS", "Node.js", "MySQL", "ExpressJS", "Tailwind"]
     },
     {
-    id: 2,
+    id: 3,
     name: "Apex Learning: AI-Powered Learning Platform",
     description:
     "Apex Learning is an innovative AI-powered learning platform that helps students and professionals create personalized study materials, practice tests, and educational content.",
@@ -133,7 +134,7 @@ export const PROJECTS = [
     techStack: ["NextJS", "Gemini API", "Inngest", "Drizzle ORM", "PostgreSQL"]
   },
   {
-    id: 1,
+    id: 2,
     name: "Voluntree: Make A Difference",
     description:
       "Voluntree is a comprehensive volunteer management platform that connects passionate volunteers with meaningful causes to create positive change in communities. It is our HackByte 3.0 hackathon project built within strict deadline of 36 hours.",
@@ -144,6 +145,20 @@ export const PROJECTS = [
     comingSoon : true,
     techStack : ["ReactJS", "Tailwind", "TypeScript", "MongoDB", "ExpressJS", "NodeJS"]
   },
+
+  {
+  "id": 1,
+  "name": "Apex Learning Pro",
+  "description": "A robust Learning Management System (LMS) backend built with Node.js and MongoDB. It features secure JWT authentication, course management, media handling via Cloudinary, and integrated Stripe payments.",
+  "image": apexlearningPro,
+  "githubLink": "https://github.com/govinddwivedi-git/apex-learning",
+  "liveLink": "#",
+  "isLive": true,
+  "comingSoon": true,
+  "techStack": ["NodeJS", "ExpressJS", "MongoDB", "JWT", "Cloudinary", "Stripe"]
+}
+
+
 ];
 
 export const BIO = [

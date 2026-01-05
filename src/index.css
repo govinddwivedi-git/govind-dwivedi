@@ -22,9 +22,15 @@ body {
   color: #fff;
 }
 
-.bg-img {
-  background-image: url("../src/assets/bg-img5.png");
+body {
+  background-color: #000;
+  background-image: url("/bg-img5.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 
 
 .gradient-text {

@@ -12,7 +12,7 @@ import LightRays from "./ui/LightRays";
 function App() {
   return (
     <div className="relative h-full antialiased">
-      <div className="fixed inset-0 bg-fixed bg-cover bg-center bg-img"></div>
+      {/* <div className="fixed inset-0 bg-fixed bg-cover bg-center bg-img"></div> */}
       
       <div className="fixed inset-0 z-0 pointer-events-none">
         <LightRays

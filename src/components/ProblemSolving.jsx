@@ -66,34 +66,34 @@ export default function ProblemSolving() {
         }
 
         // Add LeetCode data fetching
-        if (user) {
-          const response = await fetch(
-            `https://leetcode-stats-api.herokuapp.com/${user}`
-          );
-          const data = await response.json();
+        // if (user) {
+        //   const response = await fetch(
+        //     `https://leetcode-stats-api.herokuapp.com/${user}`
+        //   );
+        //   const data = await response.json();
 
-          if (data.status === "success") {
-            setLeetcodeData({
-              name: user,
-              ranking: data.ranking,
-              solvedQuestions: {
-                easy: data.easySolved,
-                medium: data.mediumSolved,
-                hard: data.hardSolved,
-                total: data.totalSolved,
-              },
-              totalQuestions: {
-                easy: data.totalEasy,
-                medium: data.totalMedium,
-                hard: data.totalHard,
-                total: data.totalQuestions,
-              },
-              acceptanceRate: data.acceptanceRate,
-              contributionPoints: data.contributionPoints,
-              reputation: data.reputation,
-            });
-          }
-        }
+        //   if (data.status === "success") {
+        //     setLeetcodeData({
+        //       name: user,
+        //       ranking: data.ranking,
+        //       solvedQuestions: {
+        //         easy: data.easySolved,
+        //         medium: data.mediumSolved,
+        //         hard: data.hardSolved,
+        //         total: data.totalSolved,
+        //       },
+        //       totalQuestions: {
+        //         easy: data.totalEasy,
+        //         medium: data.totalMedium,
+        //         hard: data.totalHard,
+        //         total: data.totalQuestions,
+        //       },
+        //       acceptanceRate: data.acceptanceRate,
+        //       contributionPoints: data.contributionPoints,
+        //       reputation: data.reputation,
+        //     });
+        //   }
+        // }
 
         // Fetch GeeksForGeeks data using our proxy API
         try {

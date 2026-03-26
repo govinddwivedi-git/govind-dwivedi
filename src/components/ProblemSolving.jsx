@@ -95,6 +95,11 @@ export default function ProblemSolving() {
         //   }
         // }
 
+        // Render LeetCode card using username even when external stats API is disabled.
+        if (user) {
+          setLeetcodeData({ name: user });
+        }
+
         // Fetch GeeksForGeeks data using our proxy API
         try {
           // Update this line to use our new proxy API

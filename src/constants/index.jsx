@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaHtml5,
   FaCss3Alt,
+  FaGolang,
 } from "react-icons/fa6";
 import { FaCode, FaJava } from 'react-icons/fa';
 import { RiNextjsFill } from "react-icons/ri";
@@ -174,6 +175,10 @@ export const SKILLS = {
     {
       icon: <SiCplusplus className="text-4xl text-blue-600 lg:text-5xl" />,
       name: "C++",
+    },
+    {
+      icon: <FaGolang className="text-4xl text-blue-400 lg:text-5xl" />,
+      name: "Go",
     },
     {
       icon: <FaJava className="text-4xl text-red-500 lg:text-5xl" />,

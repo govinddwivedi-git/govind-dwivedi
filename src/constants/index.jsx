@@ -26,11 +26,14 @@ import CPT from "../assets/cp.png"
 import portfolio from "../assets/portfolio.png"
 import voluntree from "../assets/volunteer.png"
 import cbcomp from "../assets/chatbotcomp.png";
+import coinbaseLogo from "../assets/CB_logo.jpg";
+import amazonMlssLogo from "../assets/amazonmlss.png";
+import jpmcLogo from "../assets/jpmorganchase.png";
 
 
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs, TbBrandPython, TbBrandPhp, TbBrandVue } from "react-icons/tb";
-import { SiMongodb, SiJavascript, SiDjango, SiDocker, SiGit, SiC, SiCplusplus, SiTailwindcss, SiExpress, SiFlask, SiFastapi, SiMysql, SiFirebase, SiGithubactions, SiNetlify, SiVercel, SiLinux, SiPostman } from "react-icons/si";
+import { SiMongodb, SiJavascript, SiDjango, SiDocker, SiGit, SiC, SiCplusplus, SiTailwindcss, SiExpress, SiFlask, SiFastapi, SiMysql, SiFirebase, SiGithubactions, SiNetlify, SiVercel, SiLinux, SiPostman, SiApachespark, SiApachekafka, SiDatabricks, SiSnowflake } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 
 
@@ -267,6 +270,24 @@ export const SKILLS = {
     name: "Firebase",
   },
   ],
+  dataEngineering: [
+    {
+      icon: <SiApachespark className="text-4xl text-orange-400 lg:text-5xl" />,
+      name: "PySpark",
+    },
+    {
+      icon: <SiDatabricks className="text-4xl text-red-500 lg:text-5xl" />,
+      name: "Databricks",
+    },
+    {
+      icon: <SiSnowflake className="text-4xl text-sky-400 lg:text-5xl" />,
+      name: "Snowflake",
+    },
+    {
+      icon: <SiApachekafka className="text-4xl text-purple-400 lg:text-5xl" />,
+      name: "Kafka",
+    },
+  ],
   devTools: [
     {
       icon: <VscVscode className="text-4xl text-blue-500 lg:text-5xl" />, 
@@ -304,13 +325,29 @@ export const SKILLS = {
 };
 export const EXPERIENCES = [
   {
+    title: "Software Engineering Intern",
+    company: "Coinbase",
+    duration: "May 2026 - August 2026",
+    logo: coinbaseLogo,
+    description:
+      "Built an interactive pipeline health dashboard that gave engineering teams real-time visibility into system liveliness, data correctness, latency, and completeness across a complex multi-stage data pipeline. Before this, engineers had to manually cross-reference logs across several systems to diagnose issues, a process that could take hours. By consolidating monitoring into a single drill-down interface, I cut incident triage time from about 2 hours to about 5 minutes and helped on-call engineers quickly understand what was failing and why when they were paged.",
+  },
+  {
+    title: "Amazon ML Summer School 2026 — Selected Participant",
+    company: "Amazon ML Summer School",
+    duration: "July 2026 - August 2025",
+    logo: amazonMlssLogo,
+    description:
+      "Selected as a participant in Amazon's ML Summer School 2026, a competitive program for engineering students to build depth in machine learning through an intensive, expert-led curriculum.",
+  },
+  {
     title: "Runner JP Morgan Chase <Code For Good> Hackathon",
     company: "JPMorgan Chase & Co.",
     duration: "June 2025",
+    logo: jpmcLogo,
     description:
       "Selected as 1 of 186 finalists from 60,000+ applicants. Built a secure, scalable website for NGO Purnata to combat human trafficking. Created a case management system for them to assist in tracking 100+ cases of human trafficking. Implemented victim tracking, audit logs, and role-based access control, improving NGO reporting efficiency by 40%.",
   },
-  
 ];
 
 export const EDUCATION = [

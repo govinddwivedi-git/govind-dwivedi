@@ -30,9 +30,22 @@ export default function WorkExperience() {
             whileHover={{ scale: 1.02, transition: { duration: 0.2} }}
         
           >
-            <h3 className="text-2xl font-semibold">{experience.title}</h3>
-            <p className="text-xl">{experience.company}</p>
-            <p className="text-sm text-stone-300">{experience.duration}</p>
+            <div className="flex items-start gap-4">
+              {experience.logo ? (
+                <div className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+                  <img
+                    alt={`${experience.company} logo`}
+                    className="h-full w-full object-cover"
+                    src={experience.logo}
+                  />
+                </div>
+              ) : null}
+              <div className="min-w-0 flex-1">
+                <h3 className="text-2xl font-semibold">{experience.title}</h3>
+                <p className="text-xl">{experience.company}</p>
+                <p className="text-sm text-stone-300">{experience.duration}</p>
+              </div>
+            </div>
             <p className="mt-2 text-base">{experience.description}</p>
           </motion.div>
         ))}

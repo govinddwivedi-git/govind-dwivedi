@@ -42,11 +42,11 @@ import { FaNodeJs } from "react-icons/fa";
 import { BiLogoMongodb, BiLogoPostgresql } from "react-icons/bi";
 
 export const NAVIGATION_LINKS = [
+  { label: "Work Experience", href: "#work" },
+  { label: "CP / DSA", href: "#cp-dsa" },
   { label: "Projects", href: "#projects" },
   // { label: "Bio", href: "#bio" },
-  { label: "CP / DSA", href: "#cp-dsa" },
   { label: "Skills", href: "#skills" },
-  { label: "Work Experience", href: "#work" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];

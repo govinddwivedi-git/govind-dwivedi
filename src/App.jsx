@@ -34,10 +34,10 @@ function App() {
       >
         <Navbar />
         <Hero />
-        <Projects />
-        <ProblemSolving />
-        <Skills />
         <WorkExperience />
+        <ProblemSolving />
+        <Projects />
+        <Skills />
         <EducationSection />
         <Contact />
       </div>

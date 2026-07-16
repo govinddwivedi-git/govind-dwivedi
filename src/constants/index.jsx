@@ -335,7 +335,7 @@ export const EXPERIENCES = [
   {
     title: "Amazon ML Summer School 2026 — Selected Participant",
     company: "Amazon ML Summer School",
-    duration: "July 2026 - August 2025",
+    duration: "July 2026 - August 2026",
     logo: amazonMlssLogo,
     description:
       "Selected as a participant in Amazon's ML Summer School 2026, a competitive program for engineering students to build depth in machine learning through an intensive, expert-led curriculum.",
@@ -363,7 +363,7 @@ export const EDUCATION = [
     institution: "Indian Institute of Information Technology, Jabalpur, Madhya Pradesh",
     duration: "2023 - 2027",
     description:
-      "Pursuing a B.Tech in Computer Science at IIIT Jabalpur, with a strong foundation in problem-solving and web development. Currently maintaining a 9.6 CPI while actively exploring new technologies and contributing to impactful projects. Eager to collaborate, learn, and take on new challenges.",
+      "Pursuing a B.Tech in Computer Science at IIIT Jabalpur, with a strong foundation in problem-solving and web development. Currently maintaining a 9.4 CPI while actively exploring new technologies and contributing to impactful projects. Eager to collaborate, learn, and take on new challenges.",
   },
 ];
 
